@@ -6,7 +6,7 @@ function checkLogin($email, $password, $type)
     $sql="select* from projetthe_".$type." where email='".$email."' and password='".$password."'";
     $result=mysqli_query(connect(), $sql);
     $valiny=mysqli_fetch_assoc($result);
-    return $valiny;
+    return $valiny[0];
 }
 
 // -------------------------- GESTION THE ------------------------------

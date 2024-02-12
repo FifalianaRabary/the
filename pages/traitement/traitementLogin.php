@@ -1,8 +1,8 @@
 <?php
     require '../../inc/function.php';
 
-    $email;
-    $password;
+    $email=$_POST['mail'];
+    $password = $_POST['mdp'];
     $type;
     checkLogin($email,$password,$type);
 ?>
