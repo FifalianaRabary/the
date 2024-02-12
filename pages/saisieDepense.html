@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>saisie depense</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssSaisieDepense.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssSaisieDepense.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -25,9 +25,9 @@
     <div class="container col-xs-12 col-md-12 col-sm-12 col-lg-12">
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
-            <button class="bouton btt " onclick="window.location.href='saisieCueillette.html'">Saisie cueillette</button>
-            <button class="bouton btt " onclick="window.location.href='saisieDepense.html'">Saisie depense</button>
-            <button class="bouton btt " onclick="window.location.href='resultat.html'">Resultat</button>
+            <button class="bouton btt " onclick="window.location.href='saisieCueillette.php'">Saisie cueillette</button>
+            <button class="bouton btt " onclick="window.location.href='saisieDepense.php'">Saisie depense</button>
+            <button class="bouton btt " onclick="window.location.href='resultat.php'">Resultat</button>
             
 
             
@@ -38,19 +38,19 @@
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Faire une depense:</h1>
             <form action="" method="get">
-                <label for="">Date:</label>
-                <input type="date" name="date">
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date">
                 <br>
-                <label for="">Categorie de depense:</label>
+                <label for="id_type_depense">Categorie de depense:</label>
                 <select name="id_type_depense" id="id_type_depense">
                     <option value="">choisir une categorie</option>
                     <!-- boucler-na eto lay type depense sy ny id any -->
                     <option value="">nom type depense</option>
                 </select>
                 <br>
-                <label for="">Montant:</label>
+                <label for="poids">Montant:</label>
 
-                <input type="number" name="poids">
+                <input type="number" name="poids" id="poids">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="valider">
 
@@ -81,8 +81,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>

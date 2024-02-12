@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login user</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssLoginUser.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssLoginUser.css" rel="stylesheet">
 </head>
 <body>
 
@@ -26,14 +26,14 @@
 
             <div class="formulaire col-xs-12 col-md-12 col-sm-12 col-lg-12">
                 
-                <img class="logo-img" src="image/lg.png" alt="Your Logo">
+                <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
 
                 <form action="../pages/traitement/traitementLogin.php" method="post">
-                    <label for="">Email:</label>
-                    <input type="email" name="mail" value="admin1@gmail.com">
+                    <label for="mail">Email:</label>
+                    <input type="email" name="mail" id="mail" value="user1@gmail.com">
                     <br>
-                    <label for="">Password:</label>
-                    <input type="password" name="mdp" value="mdp1">
+                    <label for="mdp">Password:</label>
+                    <input type="password" name="mdp" id="mdp" value="mdp1">
                     <br>
                     <input type="submit" class="login btn btn-primary" value="Log in">
                     
@@ -59,8 +59,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>

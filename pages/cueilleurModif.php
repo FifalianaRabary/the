@@ -1,3 +1,6 @@
+<?php
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inserer thé</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssInsertCueilleur.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssInsertCueilleur.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -26,11 +29,11 @@
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
            
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
+            <button class="bouton btt " onclick="window.location.href='theGestion.php'">Gestion thé</button>
+            <button class="bouton btt " onclick="window.location.href='parcelleGestion.php'">Gestion parcelle</button>
+            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
+            <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Configuration salaire</button>
 
             
         </div>
@@ -41,22 +44,22 @@
             <h1 class="titre">Modifier  cueilleur:</h1>
              <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
             <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
-            <form action="" method="get">
-                <label for="">Nom:</label>
-                <input type="text" name="nom" value="">
+            <form action="../pages/traitement/traitementCueilleurModif.php" method="post">
+                <label for="nom">Nom:</label>
+                <input type="text" name="nom" id="nom" value="">
                 <br>
-                <label for="">Genre:</label>
+                <label for="id_genre">Genre:</label>
                 <!-- vérifier-o kely hoe inona ny homme sy ny femme amlay value hoe 0 sa 1 -->
                 <select name="id_genre" id="id_genre" value="">
                     <option value="">choisir un genre</option>
                     <!-- boucler-na eto ny anaralay the sy ny id any -->
-                    <option value="">Homme</option>
-                    <option value="">Femme</option>
+                    <option value="0">Homme</option>
+                    <option value="1">Femme</option>
 
                 </select>
                 <br>
-                <label for="">Date de naissance:</label>
-                <input type="date" name="dtn" value="">
+                <label for="dtn">Date de naissance:</label>
+                <input type="date" name="dtn" id="dtn" value="">
                 <br>
 
                 <input type="submit" class="insert btn btn-primary" value="valider">
@@ -88,8 +91,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>

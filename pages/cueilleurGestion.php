@@ -61,7 +61,7 @@
                     <td><?php echo $cueilleurs[$i]['nom']; ?></td>
                     <td><?php if($cueilleurs[$i]['genre'] == 0){echo "Homme";} else {echo "Femme";}; ?></td>
                     <td><?php echo $cueilleurs[$i]['date_naissance']; ?></td>
-                    <td><a  class ="tdA" href="cueilleurModif.php">Modifier</a></td>
+                    <td><a  class ="tdA" href="cueilleurModif.php?id=<?php echo $cueilleurs[$i]['id']; ?>">Modifier</a></td>
                     <td><a class ="tdA" href="cueilleurSupp.php">Supprimer</a></td>
 
                 </tr>

@@ -1,7 +1,7 @@
 .container{
     /* border:solid; */
     width: 100%;
-    background: url(image/the.jpg);
+    background: url(../image/the.jpg);
     position: relative;
         height: 1024px;
     }
