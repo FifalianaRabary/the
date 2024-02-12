@@ -41,18 +41,21 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Inserer un the: </h1>
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementInsertThe.php" method="post">
                 <label for="nom">Nom:</label>
                 <input type="text" name="nom" id="nom">
                 <br>
                 <label for="occupation">Occupation en m2:</label>
-                <input type="number" name="occupation" id="occupation">
+                <input type="number" min=0 name="occupation" id="occupation">
                 <br>
                 <label for="rendement">Rendement en kg:</label>
-                <input type="number" name="Rendement" id="rendement">
+                <input type="number" min=0 name="rendement" id="rendement">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="inserer">
-
+                <?php 
+                        if(isset($_GET['message'])){ ?>
+                            <p><?php echo $_GET['message']; ?></p>
+                       <?php } ?>
 
             </form>
         </div>
