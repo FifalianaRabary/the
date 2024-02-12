@@ -1,0 +1,166 @@
+COTE ADMIN
+
+-login admin
+=>Affichage
+    *formulaire de connection(mail, mdp)
+    *CSS
+=>Fonction
+=>Integration
+    *Action formulaire vers traitement-login
+=>Données
+
+-traitement-login
+=>Affichage
+=>Fonction 
+    *checkLogin(identifiant et mot de passe)
+=>Integration
+     * (OK)Récupération de l'identifiant et du mot de passe
+            * (OK)Appel de la fonction checkLogin
+            * redirection selon le résultat de checkLogin
+                (OK)if true  -> menuGestion
+                (OK)if false -> login
+=> Données
+    *(OK)Table admin(id,nom,mail,mdp)
+
+
+
+
+
+
+
+-gestion thé
+=>Affichage 
+    *formulaire d'insertion (nom variété, occupation en m2, rendement (kg de feuille par mois)) 
+    *tableau liste 
+    *formulaire d'edit
+    *bouton add
+
+=>Fonction 
+    *insertThe()
+    *getAllThe()
+    *editThe()
+    *deleteThe()
+
+=>Integration
+    *action liste vers formulaire insert
+    *action formulaire insert vers liste
+    *action liste vers formulaire edit
+    *action formulaire edit vers liste
+
+=>Données 
+    *table the(id,nomVaritété,occupation,rendement)
+
+
+
+
+
+
+
+
+-gestion parcelle
+=>Affichage 
+    *formulaire d'insertion (surface (ha), variété (select)) 
+    *tableau liste 
+    *formulaire d'edit
+    *bouton add
+
+=>Fonction 
+    *insertParcelle()
+    *getAllParcelle()
+    *editParcelle()
+    *deleteParcelle()
+
+=>Integration
+    *action liste vers formulaire insert
+    *action formulaire insert vers liste
+    *action liste vers formulaire edit
+    *action formulaire edit vers liste
+
+=>Données 
+    *table parcelle(id,surface,id_thé)
+
+
+
+
+
+
+
+-gestion cueilleur
+=>Affichage 
+    *formulaire d'insertion (nom,genre,dtn) 
+    *tableau liste (avec salaire)
+    *formulaire d'edit (pas de modif )
+    *bouton add
+
+=>Fonction 
+    *insertCueilleur()
+    *getAllCueilleur()
+    *editCueilleur()
+    *deleteCueilleur()
+
+=>Integration
+    *action liste vers formulaire insert
+    *action formulaire insert vers liste
+    *action liste vers formulaire edit
+    *action formulaire edit vers liste
+
+=>Données 
+    *table cueilleur(id,nom,genre,dtn)
+
+
+
+
+
+
+
+
+-gestion type_depense
+=>Affichage 
+    *formulaire d'insertion (type) 
+    *tableau liste 
+    *formulaire d'edit
+    *bouton add
+
+=>Fonction 
+    *insertType_depense()
+    *getAllType_depense()
+    *editType_depense()
+    *deleteType_depense()
+
+=>Integration
+    *action liste vers formulaire insert
+    *action formulaire insert vers liste
+    *action liste vers formulaire edit
+    *action formulaire edit vers liste
+
+=>Données 
+    *table type_depense(id,type)
+
+
+
+
+
+
+-config salaire
+=>Affichage 
+    *formulaire d'insertion (nom_cueilleur(select), montant) 
+    *tableau liste 
+    *formulaire d'edit
+    *bouton add
+
+=>Fonction 
+    *insertSalaire()
+    *getAllSalaire()
+    *editSalaire()
+    *deleteSalaire()
+
+=>Integration
+    *action liste vers formulaire insert
+    *action formulaire insert vers liste
+    *action liste vers formulaire edit
+    *action formulaire edit vers liste
+
+=>Données 
+    *table salaire(id,id_cueilleur,montant)
+
+
