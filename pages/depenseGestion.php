@@ -1,3 +1,7 @@
+<?php
+    require'../inc/function.php'; 
+   $depense = getAllTypeDepense();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,18 +48,20 @@
             <table class="table">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">Categorie de depense</th>
                 </tr>
             </thead>
             <tbody>
+                <?php for ($i=0; $i < count($depense); $i++) { ?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>engrais</td>
+                    <td><?php echo $depense[$i]['id'] ?></td>
+                    <td><?php echo $depense[$i]['type'] ?></td>
                     <td><a  class ="tdA" href="depenseModif.php">Modifier</a></td>
                     <td><a class ="tdA" href="depenseSupp.php">Supprimer</a></td>
-
                 </tr>
+              <?php  } ?>
+               
             </tbody>
             </table>
 

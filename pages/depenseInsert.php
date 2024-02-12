@@ -39,9 +39,9 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Inserer une categorie de depense:</h1>
-            <form action="" method="get">
-                <label for="nom">Nom:</label>
-                <input type="text" name="nom" id="nom">
+            <form action="../pages/traitement/traitementDepense.php" method="post">
+                <label for="type">type:</label>
+                <input type="text" name="type" id="type">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="inserer">
 
