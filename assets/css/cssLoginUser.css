@@ -1,0 +1,73 @@
+.container{
+    /* border:solid; */
+    width: 100%;
+    background: url(image/the.jpg);
+    position: relative;
+        height: 1024px;
+    }
+    
+    .text{
+        margin-top: 17%;
+    padding-left: 8%;
+    font-size: large;
+    
+    }
+    
+    .divLogin{
+    /* border:solid; */
+    margin-top: 17%;
+    
+    }
+    
+    .formulaire{
+        width: 65%;
+        height: 256px;
+        padding: 12%;
+        border-radius: 16px;
+        margin-left: 23%;
+    
+        background-color: rgb(0 0 0 / 50%);
+    
+        box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+        color: white;
+    }
+
+    
+    footer {
+        color: white;
+        margin-left: 0%;
+        background-color: rgb(80 51 51);
+        box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+        padding-left: 41%;
+        text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
+        font-family: system-ui;
+    
+    }
+    
+    .bienvenu{
+        color: white;
+    font-size: 850%;
+    text-shadow: 5px 11px 0px rgba(0, 0, 0, 0.5);
+    font-family: system-ui;
+    }
+    
+  
+    
+    .login{
+        background-color: #facf3c;
+        margin-top: 11%;
+        margin-left: 40%;
+        border: none;
+        box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .login:hover{
+        background-color: #ffc400;
+
+    }
+    .logo-img{
+        width: 64%;
+    margin-top: -27%;
+    margin-left: 15%;
+    }
