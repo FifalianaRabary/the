@@ -1,7 +1,7 @@
 .container{
 /* border:solid; */
 width: 100%;
-background: url(image/champ.jpg);
+background: url(../image/champ.jpg);
 position: relative;
 	height: 1024px;
 }

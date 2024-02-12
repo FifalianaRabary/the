@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inserer thé</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssInsertParcelle.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssInsertParcelle.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -40,11 +40,11 @@
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Inserer une parcelle:</h1>
             <form action="" method="get">
-                <label for="">Surface en ha:</label>
-                <input type="number" name="surface">
+                <label for="surface">Surface en ha:</label>
+                <input type="number" name="surface" id="surface">
                 <br>
                 <!-- mila fonction getAllThe dia ny id anlay the no atao value -->
-                <label for="">Variete de the plante:</label>
+                <label for="id_the">Variete de the plante:</label>
                 <select name="id_the" id="id_the">
                     <option value="">choisir une variete</option>
                     <!-- boucler-na eto ny anaralay the sy ny id any -->
@@ -82,8 +82,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>
