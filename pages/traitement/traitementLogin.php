@@ -3,6 +3,7 @@
 
     $email=$_POST['mail'];
     $password = $_POST['mdp'];
-    $type;
+    $type="admin";
     checkLogin($email,$password,$type);
+    header('Location:../loginAdmin.php');
 ?>

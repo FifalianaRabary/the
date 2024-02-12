@@ -27,7 +27,7 @@
 
             <div class="formulaire col-xs-12 col-md-12 col-sm-12 col-lg-12">
 
-                <form action="" method="post">
+                <form action="../pages/traitement/traitementLogin.php" method="post">
                     <label for="">Email:</label>
                     <input type="email" name="mail" value="admin1@gmail.com">
                     <br>
