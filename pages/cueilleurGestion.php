@@ -1,3 +1,7 @@
+<?php
+    require'../inc/function.php'; 
+    $cueilleurs  = getAllCueilleur();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,22 +48,25 @@
             <table class="table">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Genre</th>
                 <th scope="col">Date de naissance</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Rakoto</td>
-                    <td>Homme</td>
-                    <td>12-11-1999</td>
+                <?php for ($i=0; $i <count($cueilleurs) ; $i++) { ?>
+                    <tr>
+                    <td><?php echo $cueilleurs[$i]['id']; ?></td>
+                    <td><?php echo $cueilleurs[$i]['nom']; ?></td>
+                    <td><?php if($cueilleurs[$i]['genre'] == 0){echo "Homme";} else {echo "Femme";}; ?></td>
+                    <td><?php echo $cueilleurs[$i]['date_naissance']; ?></td>
                     <td><a  class ="tdA" href="cueilleurModif.php">Modifier</a></td>
                     <td><a class ="tdA" href="cueilleurSupp.php">Supprimer</a></td>
 
                 </tr>
+               <?php } ?>
+              
             </tbody>
             </table>
 

@@ -39,7 +39,7 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Inserer un cueilleur:</h1>
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementCueilleur.php" method="post">
                 <label for="nom">Nom:</label>
                 <input type="text" name="nom" id="nom">
                 <br>
@@ -48,8 +48,8 @@
                 <select name="id_genre" id="id_genre">
                     <option value="">choisir un genre</option>
                     <!-- boucler-na eto ny anaralay the sy ny id any -->
-                    <option value="">Homme</option>
-                    <option value="">Femme</option>
+                    <option value="0">Homme</option>
+                    <option value="1">Femme</option>
 
                 </select>
                 <br>
