@@ -1,3 +1,7 @@
+<?php
+    require'../inc/function.php'; 
+    $the  = getAllThe();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,22 +48,25 @@
             <table class="table">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">variété</th>
                 <th scope="col">Ocuppation</th>
                 <th scope="col">Rendement</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Nom variete</td>
-                    <td>12 m2</td>
-                    <td>100 kg</td>
+                <?php for ($i=0; $i <count($the) ; $i++) { ?>
+                    <tr>
+                    <td><?php echo $the[$i]['id']; ?></td>
+                    <td><?php echo $the[$i]['nom']; ?></td>
+                    <td><?php echo $the[$i]['occupation']; ?> m2</td>
+                    <td><?php echo $the[$i]['rendement']; ?> kg</td>
                     <td><a  class ="tdA" href="theModif.php">Modifier</a></td>
                     <td><a class ="tdA" href="theSupp.php">Supprimer</a></td>
 
-                </tr>
+                </tr>    
+               <?php }?>
+                
             </tbody>
             </table>
 
