@@ -1,0 +1,71 @@
+.container{
+/* border:solid; */
+width: 100%;
+background: url(image/champ.jpg);
+position: relative;
+	height: 1024px;
+}
+
+.text{
+/* border:solid; */
+margin-top: 15%;
+padding-left:8%;
+
+}
+
+.divLogin{
+/* border:solid; */
+margin-top: 17%;
+
+}
+
+.formulaire{
+    width: 65%;
+    height: 256px;
+    padding: 12%;
+    border-radius: 16px;
+    margin-left: 23%;
+
+    background-color: rgba(255, 255, 255, 0.5);
+
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* header, footer {
+    background-color: #94b5fb;
+    color: white;
+    text-align: center;
+    padding: 10px;
+} */
+
+footer {
+    /* margin-top: 83%; */
+    color: white;
+    margin-left: 0%;
+    background-color: rgb(1 166 236);
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+    padding-left: 41%;
+    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
+
+
+}
+
+.bienvenu{
+    color: white;
+    font-size: 850%;
+    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
+}
+
+.tea-ko{
+    color:white;
+    font-size: 995%;
+    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);}
+
+.login{
+    background-color: #01a6ec;
+    margin-top: 11%;
+    margin-left: 40%;
+    border: none;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.3);
+
+}
