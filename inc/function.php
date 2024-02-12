@@ -12,8 +12,8 @@ function checkLogin($email, $password, $type)
 // -------------------------- GESTION THE ------------------------------
 function insertThe($nom, $occupation, $rendement)
 {
-    $sql="insert into projetthe_the(nom, occupation, rendement) values('%s', %d, %d)";
-    $sql=sprintf($sql, $nom, $occupation, $rendement);
+    $sql="insert into projetthe_the(nom,rendement,occupation) values('%s', %d, %d)";
+    $sql=sprintf($sql, $nom,$rendement,$occupation);
     mysqli_query(connect(), $sql);
 }
 
