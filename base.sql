@@ -70,7 +70,8 @@ create table projetthe_depense(
     id varchar(7),
     id_type varchar(7) references projetthe_type_depense(id),
     montant double,
-    date_depense date
+    date_depense date,
+    id_parcelle varchar(7) references projetthe_parcelle(id)
 );
 create trigger depense_insert_trigger
     before insert on projetthe_depense
