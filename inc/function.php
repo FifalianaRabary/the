@@ -10,10 +10,10 @@ function checkLogin($email, $password, $type)
 }
 
 // -------------------------- GESTION THE ------------------------------
-function insertThe($nom, $occupation, $rendement)
+function insertThe($nom, $rendement, $occupation)
 {
-    $sql="insert into projetthe_the(nom, occupation, rendement) values('%s', %d, %d)";
-    $sql=sprintf($sql, $nom, $occupation, $rendement);
+    $sql="insert into projetthe_the(nom, rendement, occupation) values('%s', %d, %d)";
+    $sql=sprintf($sql, $nom, $rendement, $occupation);
     mysqli_query(connect(), $sql);
 }
 
@@ -251,7 +251,7 @@ function insertDepense($id_type, $date, $montant)
 
 function poidsTotalCueillette($id_parcelle)
 {
-    $sql="select * from cueillette where id_parcelle='%s'";
+    $sql="select * from projetthe_cueillette where id_parcelle='%s'";
     $sql=sprintf($sql, $id_parcelle);
     $result= mysqli_query(connect(), $sql);
     $cueillette=array();
@@ -269,18 +269,46 @@ function nombrePiedParcelle($id_parcelle)
 {
     $parcelle=getByIdParcelle($id_parcelle);
     $the=getByIdThe($parcelle['id_the']);
-    $nombre=$parcelle['surface']/
+    $nombre=$parcelle['surface']*10000/$the['occupation'];
+    return $nombre;
+}
+
+function poidsTotalParcelle($id_parcelle)
+{
+    $parcelle=getByIdParcelle($id_parcelle);
+    $the=getByIdThe($parcelle['id_the']);
+    $total=nombrePiedParcelle($id_parcelle)*$the['rendement'];
+    return $total;
 }
 function poidsRestantParcelle($id_parcelle)
 {
-    $total=poidsTotalCueillette($id_parcelle);
-    $restant=0;
-
+    $total=poidsTotalParcelle($id_parcelle);
+    $totalCueillette=poidsTotalCueillette($id_parcelle);
+    $restant=$total-$totalCueillette;
+    return $restant;
 }
 
-function coutRevient()
+function depenseTotalParcelle($id_parcelle)
 {
-
+    $sql="select * from projetthe_depense where id_parcelle='%s'";
+    $sql=sprintf($sql, $id_parcelle);
+    $result= mysqli_query(connect(), $sql);
+    $depense=array();
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $depense[]=$donne;
+    }
+    $total=0;
+    for ($i = 0; $i < count($depense); $i++) {
+        $total+=$depense[$i]['montant'];
+    }
+    return $total;
+}
+function coutRevient($id_parcelle)
+{
+    $depenseTotal=depenseTotalParcelle($id_parcelle);
+    $poidsTotal=poidsTotalCueillette($id_parcelle);
+    $cout_revient=$depenseTotal/$poidsTotal;
+    return $cout_revient;
 }
 
 
