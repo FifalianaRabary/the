@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inserer thé</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssInsertSalaire.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssInsertSalaire.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -26,11 +26,11 @@
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
            
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
+            <button class="bouton btt " onclick="window.location.href='theGestion.php'">Gestion thé</button>
+            <button class="bouton btt " onclick="window.location.href='parcelleGestion.php'">Gestion parcelle</button>
+            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
+            <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Configuration salaire</button>
 
             
         </div>
@@ -41,7 +41,7 @@
             <h1 class="titre">Configurer salaire d'un cueilleur:</h1>
             <form action="" method="get">
                 <!-- mila fonction getAllCueilleur dia ny id anlay cueilleur no atao value -->
-                <label for="">cueilleur:</label>
+                <label for="id_cueilleur">cueilleur:</label>
                 <select name="id_cueilleur" id="id_cueilleur">
                     <option value="">choisir un cueilleur</option>
                     <!-- boucler-na eto ny anaralay cueilleur sy ny id any -->
@@ -50,8 +50,8 @@
 
                 </select>
                 <br>
-                <label for="">Salaire par kg:</label>
-                <input type="number" name="montant">
+                <label for="montant">Salaire par kg:</label>
+                <input type="number" name="montant" id="montant">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="inserer">
 
@@ -82,8 +82,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>

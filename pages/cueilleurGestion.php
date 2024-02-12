@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inserer thé</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssInsertParcelle.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssInsertParcelle.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -26,11 +26,11 @@
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
            
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
+            <button class="bouton btt " onclick="window.location.href='theGestion.php'">Gestion thé</button>
+            <button class="bouton btt " onclick="window.location.href='parcelleGestion.php'">Gestion parcelle</button>
+            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
+            <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Gestion depense</button>
 
             
         </div>
@@ -38,28 +38,32 @@
         <div class="filler col-xs-2 col-md-2 col-sm-2 col-lg-2"></div>
 
         <div class="liste col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <h1 class="titre">Liste des categories de depense</h1>
+            <h1 class="titre">Liste des cueilleurs</h1>
 
             <!-- boucler-na lay cueilleur, mila jerena hoe rehefa 0ny genre dia inona no mipoitra eo etc  -->
             <table class="table">
             <thead class="table-dark">
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">Categorie de depense</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Date de naissance</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>engrais</td>
-                    <td><a  class ="tdA" href="depenseModif.html">Modifier</a></td>
-                    <td><a class ="tdA" href="depenseSupp.php">Supprimmer</a></td>
+                    <td>Rakoto</td>
+                    <td>Homme</td>
+                    <td>12-11-1999</td>
+                    <td><a  class ="tdA" href="cueilleurModif.php">Modifier</a></td>
+                    <td><a class ="tdA" href="cueilleurSupp.php">Supprimer</a></td>
 
                 </tr>
             </tbody>
             </table>
 
-            <button class="add btt " onclick="window.location.href='depenseInsert.html'">Ajouter</button>
+            <button class="add btt " onclick="window.location.href='cueilleurInsert.php'">Ajouter</button>
 
 
         </div>
@@ -87,8 +91,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>

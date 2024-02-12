@@ -3,9 +3,12 @@
 include 'connection.php';
 function checkLogin($email, $password, $type)
 {
-    $sql="select* from projetthe_".$type." where email='".$email."' and password='".$password."'";
+    $valiny = array();
+    $sql="select* from projetthe_".$type." where mail='".$email."' and mdp='".$password."'";
     $result=mysqli_query(connect(), $sql);
-    $valiny=mysqli_fetch_assoc($result);
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $valiny[]=$donne;
+    }
     return $valiny[0];
 }
 
@@ -249,10 +252,10 @@ function insertDepense($id_type, $date, $montant)
 
 // -------------------------- RESULTAT -----------------------------------
 
-function poidsTotalCueillette($id_parcelle)
+function poidsTotalCueillette($id_parcelle, $date1, $date2)
 {
-    $sql="select * from projetthe_cueillette where id_parcelle='%s'";
-    $sql=sprintf($sql, $id_parcelle);
+    $sql="select * from projetthe_cueillette where id_parcelle='%s' and date>='%s' and date<='%s'";
+    $sql=sprintf($sql, $id_parcelle, $date1, $date2);
     $result= mysqli_query(connect(), $sql);
     $cueillette=array();
     while ($donne=mysqli_fetch_assoc($result)) {
@@ -280,18 +283,18 @@ function poidsTotalParcelle($id_parcelle)
     $total=nombrePiedParcelle($id_parcelle)*$the['rendement'];
     return $total;
 }
-function poidsRestantParcelle($id_parcelle)
+function poidsRestantParcelle($id_parcelle, $mois, $annee)
 {
     $total=poidsTotalParcelle($id_parcelle);
-    $totalCueillette=poidsTotalCueillette($id_parcelle);
+    $totalCueillette=poidsTotalCueillette($id_parcelle, $mois, $annee);
     $restant=$total-$totalCueillette;
     return $restant;
 }
 
-function depenseTotalParcelle($id_parcelle)
+function depenseTotalParcelle($id_parcelle, $date1, $date2)
 {
-    $sql="select * from projetthe_depense where id_parcelle='%s'";
-    $sql=sprintf($sql, $id_parcelle);
+    $sql="select * from projetthe_depense where id_parcelle='%s' and date>='%s' and date<='%s'";
+    $sql=sprintf($sql, $id_parcelle, $date1, $date2);
     $result= mysqli_query(connect(), $sql);
     $depense=array();
     while ($donne=mysqli_fetch_assoc($result)) {
@@ -303,10 +306,10 @@ function depenseTotalParcelle($id_parcelle)
     }
     return $total;
 }
-function coutRevient($id_parcelle)
+function coutRevient($id_parcelle, $date1, $date2)
 {
-    $depenseTotal=depenseTotalParcelle($id_parcelle);
-    $poidsTotal=poidsTotalCueillette($id_parcelle);
+    $depenseTotal=depenseTotalParcelle($id_parcelle, $date1, $date2);
+    $poidsTotal=poidsTotalCueillette($id_parcelle, $date1, $date2);
     $cout_revient=$depenseTotal/$poidsTotal;
     return $cout_revient;
 }
