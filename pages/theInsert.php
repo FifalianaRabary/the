@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +28,11 @@
     <div class="container col-xs-12 col-md-12 col-sm-12 col-lg-12">
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
+            <button class="bouton btt " onclick="window.location.href='theGestion.php'">Gestion thé</button>
+            <button class="bouton btt " onclick="window.location.href='parcelleGestion.php'">Gestion parcelle</button>
+            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
+            <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Configuration salaire</button>
 
             
         </div>
@@ -37,7 +40,7 @@
         <div class="filler col-xs-2 col-md-2 col-sm-2 col-lg-2"></div>
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <h1 class="titre">Inserer un the:</h1>
+            <h1 class="titre">Inserer un the: </h1>
             <form action="" method="get">
                 <label for="nom">Nom:</label>
                 <input type="text" name="nom" id="nom">

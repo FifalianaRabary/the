@@ -26,11 +26,11 @@
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
            
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='theGestion.php'">Gestion thé</button>
+            <button class="bouton btt " onclick="window.location.href='parcelleGestion.php'">Gestion parcelle</button>
+            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
+            <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Gestion depense</button>
 
             
         </div>
@@ -56,14 +56,14 @@
                     <td>Rakoto</td>
                     <td>Homme</td>
                     <td>12-11-1999</td>
-                    <td><a  class ="tdA" href="cueilleurModif.html">Modifier</a></td>
-                    <td><a class ="tdA" href="cueilleurSupp.php">Supprimmer</a></td>
+                    <td><a  class ="tdA" href="cueilleurModif.php">Modifier</a></td>
+                    <td><a class ="tdA" href="cueilleurSupp.php">Supprimer</a></td>
 
                 </tr>
             </tbody>
             </table>
 
-            <button class="add btt " onclick="window.location.href='cueilleurInsert.html'">Ajouter</button>
+            <button class="add btt " onclick="window.location.href='cueilleurInsert.php'">Ajouter</button>
 
 
         </div>

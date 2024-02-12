@@ -26,11 +26,11 @@
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
            
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
+            <button class="bouton btt " onclick="window.location.href='theGestion.php'">Gestion thé</button>
+            <button class="bouton btt " onclick="window.location.href='parcelleGestion.php'">Gestion parcelle</button>
+            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
+            <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Configuration salaire</button>
 
 
         </div>
@@ -54,14 +54,14 @@
                     <th scope="row">1</th>
                     <td>12 ha</td>
                     <td>Nom variete</td>
-                    <td><a  class ="tdA" href="parcelleModif.html">Modifier</a></td>
-                    <td><a class ="tdA" href="parcelleSupp.php">Supprimmer</a></td>
+                    <td><a  class ="tdA" href="parcelleModif.php">Modifier</a></td>
+                    <td><a class ="tdA" href="parcelleSupp.php">Supprimer</a></td>
 
                 </tr>
             </tbody>
             </table>
 
-            <button class="add btt " onclick="window.location.href='parcelleInsert.html'">Ajouter</button>
+            <button class="add btt " onclick="window.location.href='parcelleInsert.php'">Ajouter</button>
 
 
         </div>

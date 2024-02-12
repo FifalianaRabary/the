@@ -3,9 +3,12 @@
 include 'connection.php';
 function checkLogin($email, $password, $type)
 {
-    $sql="select* from projetthe_".$type." where email='".$email."' and password='".$password."'";
+    $valiny = array();
+    $sql="select* from projetthe_".$type." where mail='".$email."' and mdp='".$password."'";
     $result=mysqli_query(connect(), $sql);
-    $valiny=mysqli_fetch_assoc($result);
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $valiny[]=$donne;
+    }
     return $valiny[0];
 }
 
