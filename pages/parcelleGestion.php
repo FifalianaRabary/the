@@ -1,3 +1,7 @@
+<?php
+    require '../inc/function.php';
+    $parcelles = getAllParcelle();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,20 +48,21 @@
             <table class="table">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">Surface</th>
                 <th scope="col">Variete de the</th>
                 </tr>
             </thead>
             <tbody>
+                <?php for ($i=0; $i < count($parcelles); $i++) { ?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>12 ha</td>
-                    <td>Nom variete</td>
+                    <td><?php echo $parcelles[$i]['id']; ?></td>
+                    <td><?php echo $parcelles[$i]['surface']; ?></td>
+                    <td><?php echo $parcelles[$i]['id_the']; ?></td>
                     <td><a  class ="tdA" href="parcelleModif.php">Modifier</a></td>
                     <td><a class ="tdA" href="parcelleSupp.php">Supprimer</a></td>
-
                 </tr>
+                <?php } ?>
             </tbody>
             </table>
 

@@ -1,3 +1,7 @@
+<?php
+    require'../inc/function.php'; 
+    $the  = getAllThe();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +43,7 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Inserer une parcelle:</h1>
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementParcelle.php" method="post">
                 <label for="surface">Surface en ha:</label>
                 <input type="number" name="surface" id="surface">
                 <br>
@@ -48,13 +52,18 @@
                 <select name="id_the" id="id_the">
                     <option value="">choisir une variete</option>
                     <!-- boucler-na eto ny anaralay the sy ny id any -->
-                    <option value="">Nom the</option>
+                    <?php for ($i=0; $i <count($the) ; $i++) { ?> 
+                        <option value="<?php echo $the[$i]['id'] ?>"><?php echo $the[$i]['nom'];  ?></option>                        
+                   <?php } ?>
                     
 
                 </select>
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="inserer">
-
+                <?php 
+                        if(isset($_GET['message'])){ ?>
+                            <p><?php echo $_GET['message']; ?></p>
+                <?php } ?>
 
             </form>
         </div>

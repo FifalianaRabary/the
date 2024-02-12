@@ -1,6 +1,6 @@
 <?php
     require '../../inc/function.php';
-    session_start();
+   
     $nom = $_POST['nom'];
     $occupation = $_POST['occupation'];
     $rendement = $_POST['rendement'];
