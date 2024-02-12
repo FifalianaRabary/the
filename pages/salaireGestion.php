@@ -1,3 +1,7 @@
+<?php
+    require'../inc/function.php'; 
+    $salaires = getAllSalaire();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,20 +48,24 @@
             <table class="table">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">cueilleur</th>
                 <th scope="col">montant</th>
                 </tr>
             </thead>
             <tbody>
+                <?php for ($i=0; $i < count($salaires); $i++) { ?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Rakoto</td>
-                    <td>500000 ar</td>
+                    
+                    <td><?php echo $salaires[$i]['id']; ?></td>
+                    <td><?php echo $salaires[$i]['id_cueilleur']; ?></td>
+                    <td><?php echo $salaires[$i]['montant']; ?></td>
                     <td><a  class ="tdA" href="salaireModif.php">Modifier</a></td>
                     <td><a class ="tdA" href="salaireSupp.php">Supprimer</a></td>
 
                 </tr>
+               <?php } ?>
+                
             </tbody>
             </table>
 

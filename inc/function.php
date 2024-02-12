@@ -199,7 +199,7 @@ function getByIdTypeDepense($id)
 
 function insertSalaire($id_cueilleur, $montant)
 {
-    $sql="insert into projetthe_salaire(id_cueilleur, montant) values(%d, '%s')";
+    $sql="insert into projetthe_salaire(id_cueilleur, montant) values('%s', '%s')";
     $sql=sprintf($sql, $id_cueilleur, $montant);
     mysqli_query(connect(), $sql);
 }

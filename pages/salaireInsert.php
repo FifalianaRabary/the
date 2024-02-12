@@ -1,3 +1,7 @@
+<?php
+    require'../inc/function.php'; 
+    $cueilleurs  = getAllCueilleur();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,13 +43,16 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Configurer salaire d'un cueilleur:</h1>
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementSalaire.php" method="post">
                 <!-- mila fonction getAllCueilleur dia ny id anlay cueilleur no atao value -->
                 <label for="id_cueilleur">cueilleur:</label>
                 <select name="id_cueilleur" id="id_cueilleur">
                     <option value="">choisir un cueilleur</option>
                     <!-- boucler-na eto ny anaralay cueilleur sy ny id any -->
-                    <option value="">Nom cueilleur</option>
+                    <?php for ($i=0; $i < count($cueilleurs) ; $i++) { ?>
+                        <option value="<?php echo $cueilleurs[$i]['id']; ?>"><?php echo $cueilleurs[$i]['nom']; ?></option>
+                   <?php } ?>
+                    
                     
 
                 </select>
