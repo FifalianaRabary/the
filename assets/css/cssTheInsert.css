@@ -1,0 +1,175 @@
+.container{
+    width: 100%;
+    background: url(image/harvest.jpg);
+    position: relative;
+        height: 1024px;
+}
+
+/* footer, header */
+header {
+    background-color: rgb(80 51 51);
+
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 97px;
+
+
+}
+
+
+.logo-img{
+    vertical-align: middle;
+    width: 29%;
+    margin-top: -3%;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: system-ui;
+    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
+    font-size: 163%;
+
+
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    color: white;
+    margin-left: 0%;
+    background-color: rgb(80 51 51);
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+    padding-left: 41%;
+    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
+    font-family: system-ui;
+
+}
+
+/* fin footer sy header*/
+
+/* nav de côté */
+.bouton {
+    width: 112.2%;
+    height: 78px;
+    background-color: rgb(91 199 110);
+
+    cursor: pointer;
+    font-family: system-ui;
+    font-size: 33px;
+    line-height: 38px;
+    text-align: center;
+    color: white;
+    margin-left: -20px;
+    border: darkgrey;
+    margin-top: 13%;
+    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
+
+
+}
+
+.divGestion{
+    background-color: rgb(91 199 110);
+
+
+    height: 1024px;
+    margin-left: -15px;
+
+
+}
+/*Fin nav de côté  */
+
+    
+    
+.formulaire{
+    height: 281px;
+padding: 2%;
+border-radius: 16px;
+background-color: rgba(255, 255, 255, 0.5);
+box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+margin-top: 11%;
+text-align: center;
+width: 50%;
+font-family: system-ui;
+font-size: 147%;
+
+}
+    
+   
+
+    
+
+    
+.insert{
+    background-color: #f9ce44;
+    margin-top: 9%;
+    margin-left: 79%;
+    box-shadow: 7px 5px 8px 0px rgba(0, 0, 0, 0.3);
+    width: 17%;
+    height: 58px;
+    font-family: system-ui;
+    border: none;
+    font-weight: 500;
+    font-size: 149%;
+
+
+}
+
+.titre{
+    color: #005168;
+    font-family: system-ui;
+    font-size: 205%;
+
+}
+
+
+
+
+.liste{
+    height: 281px;
+padding: 2%;
+border-radius: 16px;
+background-color: rgba(255, 255, 255, 0.5);
+box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+margin-top: 11%;
+text-align: center;
+width: 50%;
+font-family: system-ui;
+font-size: 147%;
+}
+
+td 
+{
+    font-weight: 700;
+}
+
+.add 
+{
+    background-color: #f9ce44;
+    margin-top: 9%;
+    margin-left: 79%;
+    box-shadow: 7px 5px 8px 0px rgba(0, 0, 0, 0.3);
+    width: 17%;
+    height: 58px;
+    font-family: system-ui;
+    border: none;
+    font-weight: 500;
+    font-size: 149%;
+    color: white;
+    border-radius: 16px;
+}
+
+.tdA{
+    color: #005168;
+}
