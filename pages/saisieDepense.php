@@ -64,7 +64,7 @@
                     <!-- boucler-na eto lay type depense sy ny id any -->
                     <?php for ($i=0; $i < count($parcelle); $i++) { ?>
                         <option value="<?php echo $parcelle[$i]['id'] ?>"><?php echo $parcelle[$i]['nom'] ?></option>
-                    <? } ?>
+                    <?php } ?>
                 </select>
                 <input type="submit" class="insert btn btn-primary" value="valider">
 
