@@ -4,6 +4,8 @@
     $fin = $_POST['fin'];
     $parcelle = $_POST['id_parcelle'];
     poidsTotalCueillette($parcelle, $debut, $fin);
+
+    header('Location:../resultatInput.php');
     
 
 ?>

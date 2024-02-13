@@ -1,7 +1,6 @@
 <?php
        require '../inc/function.php';
        $parcelle = getAllParcelle();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,28 +41,7 @@
 
         <div class=" col-xs-6 col-md-6 col-sm-6 col-lg-6">
 
-            <div class="row">
-                <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
-                    <form action="../pages/traitement/traitementResultat.php" method="post">
-                            <label for="id_parcelle">Parcelle:</label>
-                            <select name="id_parcelle" id="id_parcelle">
-                                <option value="">choisir un cueilleur</option>
-                                <!-- boucler-na eto ny anaralay cueilleur sy ny id any -->
-                                <?php for ($i=0; $i <count($parcelle) ; $i++) { ?>
-                                <option value="<?php echo $parcelle[$i]['id'] ?>"><?php echo $parcelle[$i]['id'] ?></option>
-                                <?php  } ?>
-                            </select>
-                        <label for="debut">Date debut:</label>
-                        <input type="date" name="debut" value="" id="debut">
-                        <label for="fin">Date Fin:</label>
-                        <input type="date" name="fin" value="" id="fin">
-        
-                        <input type="submit" class="insert btn btn-primary" value="ok">
-        
-                    </form>
-                </div>
-            </div>
-
+           
             <div class="row">
 
                 <div class=" liste col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -84,16 +62,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <?php for ($i=0; $i <count($parcelle) ; $i++) {  
+                        $poidTotal = poidsTotalParcelle($parcelle[$i]['id']);
+                        $poidRestant = poidsRestantParcelle($parcelle[$i]['id'],$_POST['debut'],$_POST['fin']);
+                        $montantVente = montantVente($parcelle[$i]['id'],$_POST['debut'],$_POST['fin']);
+                        $benefice = benefice($parcelle[$i]['id'],$_POST['debut'],$_POST['fin']);
+                        $montantDepense = depenseTotalParcelle($parcelle[$i]['id'],$_POST['debut'],$_POST['fin']);
+                        $coutRevient = coutRevient($parcelle[$i]['id'],$_POST['debut'],$_POST['fin']);
+        ?>
+                            <tr>
                           
                             <td><?php echo $parcelle[$i]['id']; ?></td>
-                            <td><?php  ?></td>
-                            <td>5kg</td>
-                            <td>50000 ar</td>
-                            <td>36957 ar</td>
-                            <td>blabla</td>
-                            <td>1000 ar</td>
+                            <td><?php echo $poidTotal[$i]; ?></td>
+                            <td><?php echo $poidRestant[$i]; ?></td>
+                            <td><?php echo $montantVente[$i]; ?></td>
+                            <td><?php echo $montantDepense[$i]; ?></td>
+                            <td><?php echo $benefice[$i]; ?></td>
+                            <td><?php echo $coutRevient[$i]; ?></td>
                         </tr>
+                       <?php } ?>
+                       
                     </tbody>
                     </table>
                  </div>
