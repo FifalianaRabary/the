@@ -77,6 +77,9 @@
                         <th scope="col">id</th>
                         <th scope="col">Poids total</th>
                         <th scope="col">Poids restant</th>
+                        <th scope="col">Montant ventes</th>
+                        <th scope="col">Montant depenses</th>
+                        <th scope="col">Benefice</th>
                         <th scope="col">Cout de revient par kg</th>
                         </tr>
                     </thead>
@@ -86,6 +89,9 @@
                             <td><?php echo $parcelle[$i]['id']; ?></td>
                             <td><?php  ?></td>
                             <td>5kg</td>
+                            <td>50000 ar</td>
+                            <td>36957 ar</td>
+                            <td>blabla</td>
                             <td>1000 ar</td>
                         </tr>
                     </tbody>
