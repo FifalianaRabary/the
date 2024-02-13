@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inserer thé</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssTheInsert.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssTheInsert.css" rel="stylesheet">
 </head>
 <body>
 
@@ -86,8 +86,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>
