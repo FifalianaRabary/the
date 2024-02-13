@@ -52,6 +52,9 @@
                 <label for="rendement">Rendement en kg:</label>
                 <input type="number" min=0 name="rendement" id="rendement">
                 <br>
+                <label for="prixVente">Prix de vente par kg:</label>
+                <input type="number" min=0 name="prixVente" id="prixVente">
+                <br>
                 <input type="submit" class="insert btn btn-primary" value="inserer">
                 <?php 
                         if(isset($_GET['message'])){ ?>
