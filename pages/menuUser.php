@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu admin</title>
+    <title>saisie cueillette</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssInsertCueilleur.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssMenuUser.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -25,12 +25,10 @@
     <div class="container col-xs-12 col-md-12 col-sm-12 col-lg-12">
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
-           
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
+            <button class="bouton btt " onclick="window.location.href='saisieCueillette.php'">Saisie cueillette</button>
+            <button class="bouton btt " onclick="window.location.href='saisieDepense.php'">Saisie depense</button>
+            <button class="bouton btt " onclick="window.location.href='resultat.php'">Resultat</button>
+            
 
             
         </div>
@@ -38,7 +36,7 @@
         <div class="filler col-xs-2 col-md-2 col-sm-2 col-lg-2"></div>
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <h1 class="bonjour">Bonjour, admin</h1>
+            <h1 class="bonjour">Bonjour, user</h1>
             <p>Que souhaitez vous faire aujourd'hui?</p>
         </div>
 
@@ -65,8 +63,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>

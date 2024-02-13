@@ -1,6 +1,6 @@
 .container{
     width: 100%;
-    background: url(image/leaf.jpg);
+    background: url(../image/leaf.jpg);
     position: relative;
         height: 1024px;
 }

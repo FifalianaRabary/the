@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>saisie depense</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssResultat.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssResultat.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -40,10 +40,10 @@
             <div class="row">
                 <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
                     <form action="" method="get">
-                        <label for="">Date debut:</label>
-                        <input type="date" name="debut" value="">
-                        <label for="">Date debut:</label>
-                        <input type="date" name="debut" value="">
+                        <label for="debut">Date debut:</label>
+                        <input type="date" name="debut" value="" id="debut">
+                        <label for="fin">Date Fin:</label>
+                        <input type="date" name="fin" value="" id="fin">
         
                         <input type="submit" class="insert btn btn-primary" value="ok">
         
@@ -110,8 +110,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>
