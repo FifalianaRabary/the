@@ -5,7 +5,7 @@
     $cueilleur = $_GET['cueilleur'];
     $parcelle = $_GET['parcelle'];
     $poids = $_GET['poids'];
-    $validation = insertCueillette();
+    $validation =insertCueillette($cueilleur, $parcelle, $poids, $validation);
     if ($validation) {
         $response = "success";
     }

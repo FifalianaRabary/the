@@ -385,7 +385,7 @@ function salaire($date1, $date2)
 function insertCueillette($id_cueilleur, $id_parcelle, $poids, $date_cueillette)
 {
     $sql="insert into projetthe_cueillette(id_cueilleur, id_parcelle, poids, date_cueillette) values('%s', '%s', %d, '%s')";
-    $sql=sprintf($sql, $id_type, $date, $montant, $id_parcelle);
+    $sql=sprintf($sql, $id_cueilleur, $id_parcelle, $poids, $date_cueillette);
     mysqli_query(connect(), $sql);
 }
 
@@ -414,9 +414,9 @@ function getAllCueillette()
     return $cueillette;
 }
 
-function getByIdCueilleur($id)
+function getByIdCueillette($id)
 {
-    $sql="select* from projetthe_cueilleur where id=%d";
+    $sql="select* from projetthe_cueillette where id=%d";
     $sql=sprintf($sql, $id);
     $result=mysqli_query(connect(), $sql);
     $cueillette=array();
