@@ -1,4 +1,5 @@
 <?php
+    require '../../inc/function.php';
     $nom=$_POST['nom'];
     $occupation=$_POST['occupation'];
     $rendement=$_POST['rendement'];

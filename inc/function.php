@@ -15,28 +15,28 @@ function checkLogin($email, $password, $type)
 // -------------------------- GESTION THE ------------------------------
 function insertThe($nom, $rendement, $occupation)
 {
-    $sql="insert into projetthe_the(nom, rendement, occupation) values('%s', %d, %d)";
+    $sql="insert into projetThe_the(nom, rendement, occupation) values('%s', %d, %d)";
     $sql=sprintf($sql, $nom, $rendement, $occupation);
     mysqli_query(connect(), $sql);
 }
 
 function editThe($id, $nom, $occupation, $rendement)
 {
-    $sql="update  projetthe_the set nom='%s', occupation=%d, rendement=%d where id=%d";
+    $sql="update  projetThe_the set nom='%s', occupation=%d, rendement=%d where id=%d";
     $sql=sprintf($sql, $nom, $occupation, $rendement, $id);
     mysqli_query(connect(), $sql);
 }
 
 function deleteThe($id)
 {
-    $sql="delete from projetthe_the where id=%d";
+    $sql="delete from projetThe_the where id=%d";
     $sql=sprintf($sql, $id);
     mysqli_query(connect(), $sql);
 }
 
 function getAllThe()
 {
-    $sql="select* from projetthe_the";
+    $sql="select * from projetThe_the";
     $result=mysqli_query(connect(), $sql);
     $the=array();
     while ($donne=mysqli_fetch_assoc($result)) {
@@ -47,7 +47,7 @@ function getAllThe()
 
 function getByIdThe($id)
 {
-    $sql="select* from projetthe_the where id=%d";
+    $sql="select* from projetThe_the where id=%d";
     $sql=sprintf($sql, $id);
     $result=mysqli_query(connect(), $sql);
     $the=array();
