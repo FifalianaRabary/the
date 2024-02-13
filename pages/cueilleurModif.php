@@ -1,5 +1,7 @@
 <?php
-    
+    require'../inc/function.php'; 
+    $id = $_GET['id'];
+    $cueilleurById = getByIdCueilleur($id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,8 +47,11 @@
              <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
             <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
             <form action="../pages/traitement/traitementCueilleurModif.php" method="post">
+                <label for="id">id:</label>
+                <input type="text" name="id" id="id" value="<?php echo $cueilleurById['id']; ?>">
+                <br>
                 <label for="nom">Nom:</label>
-                <input type="text" name="nom" id="nom" value="">
+                <input type="text" name="nom" id="nom" value="<?php echo $cueilleurById['nom']; ?>">
                 <br>
                 <label for="id_genre">Genre:</label>
                 <!-- vérifier-o kely hoe inona ny homme sy ny femme amlay value hoe 0 sa 1 -->
@@ -59,7 +64,7 @@
                 </select>
                 <br>
                 <label for="dtn">Date de naissance:</label>
-                <input type="date" name="dtn" id="dtn" value="">
+                <input type="date" name="dtn" id="dtn" value="<?php echo $cueilleurById['date_naissance']; ?>">
                 <br>
 
                 <input type="submit" class="insert btn btn-primary" value="valider">

@@ -114,7 +114,7 @@ function insertCueilleur($nom, $genre, $date_naissance)
 
 function editCueilleur($id, $nom, $genre, $date_naissance)
 {
-    $sql="update table projetthe_cueilleur set nom='%s', genre='%s', date_naissance='%s' where id='%s'";
+    $sql="update projetthe_cueilleur set nom='%s', genre='%s', date_naissance='%s' where id='%s'";
     $sql=sprintf($sql, $nom, $genre, $date_naissance, $id);
     mysqli_query(connect(), $sql);
 }
