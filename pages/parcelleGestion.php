@@ -59,7 +59,7 @@
                     <td><?php echo $parcelles[$i]['id']; ?></td>
                     <td><?php echo $parcelles[$i]['surface']; ?></td>
                     <td><?php echo $parcelles[$i]['id_the']; ?></td>
-                    <td><a  class ="tdA" href="parcelleModif.php">Modifier</a></td>
+                    <td><a  class ="tdA" href="parcelleModif.php?id=<?php echo $parcelles[$i]['id']; ?>">Modifier</a></td>
                     <td><a class ="tdA" href="parcelleSupp.php">Supprimer</a></td>
                 </tr>
                 <?php } ?>

@@ -1,3 +1,9 @@
+<?php
+    require'../inc/function.php'; 
+    $id = $_GET['id'];
+    $the  = getAllThe();
+    $parcelleById = getByIdParcelle($id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,16 +47,21 @@
             <h1 class="titre">Modifier une parcelle:</h1>
              <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
             <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementParcelleModif.php" method="post">
+                <label for="id">id:</label>
+                <input type="text" name="id" id="id" value="<?php echo $parcelleById['id']; ?>" >
+                <br>
                 <label for="surface">Surface en ha:</label>
-                <input type="number" name="surface" id="surface" value="" >
+                <input type="number" name="surface" id="surface" value="<?php echo $parcelleById['surface']; ?>" >
                 <br>
                 <!-- mila fonction getAllThe dia ny id anlay the no atao value -->
                 <label for="id_the">Variete de the plante:</label>
                 <select name="id_the" id="id_the" value="">
                     <option value="">choisir une variete</option>
                     <!-- boucler-na eto ny anaralay the sy ny id any -->
-                    <option value="">Nom the</option>
+                     <?php for ($i=0; $i <count($the) ; $i++) { ?> 
+                        <option value="<?php echo $the[$i]['id'] ?>"><?php echo $the[$i]['nom'];  ?></option>                        
+                    <?php } ?>
                     
 
                 </select>
