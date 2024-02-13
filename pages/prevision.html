@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="cssPrevision.css" rel="stylesheet">
+
+
+    <script type="text/javascript">
+        function fetchInfoParcelle() 
+        {
+            var date = document.getElementById('date').value;
+
+            var xhr; 
+            try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+            catch (e) 
+            {
+                try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+                catch (e2) 
+                {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;   }
+                }
+            }
+        
+            xhr.onreadystatechange  = function() 
+            { 
+            if(xhr.readyState  == 4)
+            {
+                    if(xhr.status  == 200) 
+                    {
+                        var tabInfoParcelle = JSON.parse(xhr.responseText);
+
+                        var totalPoids = document.createElement("p");
+                        var montant = document.createElement("p");
+
+                        totalPoids.textContent ='Poids total: '+getPoidsTotal(date);
+                        montant.textContent ='Montant total: '+getMontant(date);
+
+                        document.getElementById("liste").appendChild(totalPoids);
+                        document.getElementById("liste").appendChild(montant);
+                        
+
+                     
+                        for(var i=0; i< tabInfoParcelle.length(); i++)
+                        {
+                            var divParcelle = document.createElement("div");
+                            var numParcelle = document.createElement("p");
+                            var nomThe = document.createElement("p");
+                            var surface = document.createElement("p");
+                            var nbPied = document.createElement("p");
+                            var poidsRestant = document.createElement("p");
+
+                            numParcelle.textContent=tabInfoParcelle[i].id;
+                            nomThe.textContent=getNomTheById(tabInfoParcelle[i].id_the);
+                            surface.textContent= tabInfoParcelle[i].surface;
+                            nbPied.textContent = getNbPiedById(tabInfoParcelle[i].id);
+                            poidsRestant = getPoidsRestantByIdDate(tabInfoParcelle[i].id, date);
+
+                            divParcelle.appendChild(numParcelle);
+                            divParcelle.appendChild(nomThe);
+                            divParcelle.appendChild(surface);
+                            divParcelle.appendChild(nbPied);
+                            divParcelle.appendChild(poidsRestant);
+
+                            document.getElementById("liste").appendChild(divParcelle);
+                            
+
+                        }
+                        
+                        
+                    } 
+                    else 
+                    {
+                    }
+                }
+            }; 
+        //XMLHttpRequest.open(method, url, async)
+        xhr.open("GET", "traitementPrevision.php?date=" + date,  true); 
+        
+        //XMLHttpRequest.send(body)
+        xhr.send(null); 
+        }
+
+
+        function getNomTheById(id_the) 
+        {
+            var xhr; 
+            try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+            catch (e) 
+            {
+                try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+                catch (e2) 
+                {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;   }
+                }
+            }
+        
+            xhr.onreadystatechange  = function() 
+            { 
+            if(xhr.readyState  == 4)
+            {
+                    if(xhr.status  == 200) 
+                    {
+                        return (JSON.parse(xhr.responseText)).nom;             
+                        
+                        
+                    } 
+                    else 
+                    {
+                    }
+                }
+            }; 
+        //XMLHttpRequest.open(method, url, async)
+        xhr.open("GET", "traitementAjaxNom.php?id_the=" + id_the,  true); 
+        
+        //XMLHttpRequest.send(body)
+        xhr.send(null); 
+        }
+
+        function getNbPiedById(id_parcelle)
+        {
+            var xhr; 
+            try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+            catch (e) 
+            {
+                try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+                catch (e2) 
+                {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;   }
+                }
+            }
+        
+            xhr.onreadystatechange  = function() 
+            { 
+            if(xhr.readyState  == 4)
+            {
+                    if(xhr.status  == 200) 
+                    {
+                        return (JSON.parse(xhr.responseText))[0];             
+                        
+                        
+                    } 
+                    else 
+                    {
+                    }
+                }
+            }; 
+        //XMLHttpRequest.open(method, url, async)
+        xhr.open("GET", "traitementAjaxPied.php?id_parcelle=" + id_parcelle,  true); 
+        
+        //XMLHttpRequest.send(body)
+        xhr.send(null); 
+        }
+
+
+        function getPoidsRestantByIdDate(id_parcelle, date)
+        {
+            var xhr; 
+            try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+            catch (e) 
+            {
+                try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+                catch (e2) 
+                {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;   }
+                }
+            }
+        
+            xhr.onreadystatechange  = function() 
+            { 
+            if(xhr.readyState  == 4)
+            {
+                    if(xhr.status  == 200) 
+                    {
+                        return (JSON.parse(xhr.responseText))[0];             
+                        
+                        
+                    } 
+                    else 
+                    {
+                    }
+                }
+            }; 
+        //XMLHttpRequest.open(method, url, async)
+        xhr.open("GET", "traitementAjaxNbPoidsRestant.php?id_parcelle=" + id_parcelle + 
+        "&date="+date,  true); 
+        
+        //XMLHttpRequest.send(body)
+        xhr.send(null); 
+        }
+
+
+        function getPoidsTotal(date)
+        {
+            var xhr; 
+            try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+            catch (e) 
+            {
+                try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+                catch (e2) 
+                {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;   }
+                }
+            }
+        
+            xhr.onreadystatechange  = function() 
+            { 
+            if(xhr.readyState  == 4)
+            {
+                    if(xhr.status  == 200) 
+                    {
+                        return (JSON.parse(xhr.responseText))[0];             
+                        
+                        
+                    } 
+                    else 
+                    {
+                    }
+                }
+            }; 
+        //XMLHttpRequest.open(method, url, async)
+        xhr.open("GET", "traitementAjaxPoidsTotal.php?date=" + date + 
+        "&date="+date,  true); 
+        
+        //XMLHttpRequest.send(body)
+        xhr.send(null); 
+        }
+
+        function getMontant(date)
+        {
+            var xhr; 
+            try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+            catch (e) 
+            {
+                try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+                catch (e2) 
+                {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;   }
+                }
+            }
+        
+            xhr.onreadystatechange  = function() 
+            { 
+            if(xhr.readyState  == 4)
+            {
+                    if(xhr.status  == 200) 
+                    {
+                        return (JSON.parse(xhr.responseText))[0];             
+                        
+                        
+                    } 
+                    else 
+                    {
+                    }
+                }
+            }; 
+        //XMLHttpRequest.open(method, url, async)
+        xhr.open("GET", "traitementAjaxMontant.php?date=" + date + 
+        "&date="+date,  true); 
+        
+        //XMLHttpRequest.send(body)
+        xhr.send(null); 
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
+            <img class="logo-img" src="image/lg.png" alt="Your Logo">
+        </div>
+
+        <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
+            <a href="#">Accueil</a>
+            <a href="#">Menu</a>
+            <a href="#">Déconnexion</a>
+        </div>
+    </header>
+  
+    <div class="container col-xs-12 col-md-12 col-sm-12 col-lg-12">
+        
+        <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
+            <button class="bouton btt " onclick="window.location.href='saisieCueillette.html'">Saisie cueillette</button>
+            <button class="bouton btt " onclick="window.location.href='saisieDepense.html'">Saisie depense</button>
+            <button class="bouton btt " onclick="window.location.href='resultat.html'">Resultat</button>
+            <button class="bouton btt " onclick="window.location.href='paiement.html'">paiement</button>
+            <button class="bouton btt " onclick="window.location.href='paiement.html'">paiement</button>
+
+
+            
+        </div>
+
+        <div class="filler col-xs-2 col-md-2 col-sm-2 col-lg-2"></div>
+
+        <div class=" col-xs-6 col-md-6 col-sm-6 col-lg-6">
+
+            <div class="row">
+                <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
+                    <form action="" method="get">
+                        <label for="">Date:</label>
+                        <input type="date" id="date" name="date" value="">
+
+        
+                        <input type="button" class="insert btn btn-primary" value="ok" onclick="fetchInfoParcelle()">
+        
+        
+                    </form>
+                </div>
+            </div>
+
+            <!-- tsy mipoitra raha tsisy reponse ajax -->
+            <div class="row">
+
+                <div id="liste" class=" liste col-xs-6 col-md-6 col-sm-6 col-lg-6">
+                    
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="filler col-xs-2 col-md-2 col-sm-2 col-lg-2"></div>
+
+        
+
+       
+
+        
+
+    </div>
+
+    <footer >
+        <p>Rabary Mihaingo Soa Harena Fifaliana ETU002455</p>
+        <p>Rakotoharitiana Hedy Hamael ETU002500</p>
+        <p>Randriambololona Kaloina ETU002571</p>
+    </footer>
+
+    
+
+   
+   
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
