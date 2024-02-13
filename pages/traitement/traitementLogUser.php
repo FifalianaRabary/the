@@ -3,13 +3,13 @@
     session_start();
     $email=$_POST['mail'];
     $password = $_POST['mdp'];
-    $type="admin";
+    $type="user";
     $check = checkLogin($email,$password,$type);
     if($check != null) {
-        $_SESSION['admin'] = $check;
-        header('Location:../menuAdmin.php');
+        $_SESSION['user'] = $check;
+        header('Location:../menuUser.php');
     }
     else{
-        header('Location:../loginAdmin.php?error=email ou mot de passe incorrect !!!');
+        header('Location:../loginUser.php?error=email ou mot de passe incorrect !!!');
     }
 ?>

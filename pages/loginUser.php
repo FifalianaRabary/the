@@ -36,7 +36,10 @@
                     <input type="password" name="mdp" id="mdp" value="mdp1">
                     <br>
                     <input type="submit" class="login btn btn-primary" value="Log in">
-                    
+                    <?php 
+                        if(isset($_GET['error'])){ ?>
+                            <p><?php echo $_GET['error']; ?></p>
+                       <?php } ?>
                 </form>
             
             </div>

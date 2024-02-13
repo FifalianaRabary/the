@@ -283,10 +283,10 @@ function poidsTotalParcelle($id_parcelle)
     $total=nombrePiedParcelle($id_parcelle)*$the['rendement'];
     return $total;
 }
-function poidsRestantParcelle($id_parcelle, $mois, $annee)
+function poidsRestantParcelle($id_parcelle, $date1, $date2)
 {
     $total=poidsTotalParcelle($id_parcelle);
-    $totalCueillette=poidsTotalCueillette($id_parcelle, $mois, $annee);
+    $totalCueillette=poidsTotalCueillette($id_parcelle, $date1, $date2);
     $restant=$total-$totalCueillette;
     return $restant;
 }
