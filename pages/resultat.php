@@ -25,9 +25,9 @@
     <div class="container col-xs-12 col-md-12 col-sm-12 col-lg-12">
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
-            <button class="bouton btt " onclick="window.location.href='saisieCueillette.html'">Saisie cueillette</button>
-            <button class="bouton btt " onclick="window.location.href='saisieDepense.html'">Saisie depense</button>
-            <button class="bouton btt " onclick="window.location.href='resultat.html'">Resultat</button>
+            <button class="bouton btt " onclick="window.location.href='saisieCueillette.php'">Saisie cueillette</button>
+            <button class="bouton btt " onclick="window.location.href='saisieDepense.php'">Saisie depense</button>
+            <button class="bouton btt " onclick="window.location.href='resultat.php'">Resultat</button>
             
 
             
