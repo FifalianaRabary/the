@@ -28,7 +28,8 @@
             <button class="bouton btt " onclick="window.location.href='saisieCueillette.php'">Saisie cueillette</button>
             <button class="bouton btt " onclick="window.location.href='saisieDepense.php'">Saisie depense</button>
             <button class="bouton btt " onclick="window.location.href='resultat.php'">Resultat</button>
-            
+            <button class="bouton btt " onclick="window.location.href='paiement.html'">paiement</button>
+
 
             
         </div>

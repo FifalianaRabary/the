@@ -31,7 +31,6 @@
             <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
             <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
             <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
-            <button class="bouton btt " onclick="window.location.href='paiement.html'">paiement</button>
             <button class="bouton btt " onclick="window.location.href='configurationJournaliere.html'">Configuration journaliere</button>
             
         </div>
