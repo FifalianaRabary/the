@@ -61,8 +61,8 @@
                     <td><?php echo $the[$i]['nom']; ?></td>
                     <td><?php echo $the[$i]['occupation']; ?> m2</td>
                     <td><?php echo $the[$i]['rendement']; ?> kg</td>
-                    <td><a  class ="tdA" href="theModif.php">Modifier</a></td>
-                    <td><a class ="tdA" href="theSupp.php">Supprimer</a></td>
+                    <td><a  class ="tdA" href="theModif.php?id=<?php echo $the[$i]['id']; ?>">Modifier</a></td>
+                    <td><a class ="tdA" href="theSupp.php?id=<?php echo $the[$i]['id']; ?>">Supprimer</a></td>
 
                 </tr>    
                <?php }?>

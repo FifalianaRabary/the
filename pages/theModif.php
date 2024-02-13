@@ -1,3 +1,8 @@
+<?php
+    require'../inc/function.php'; 
+    $id = $_GET['id'];
+    $theById = getByIdThe($id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,15 +45,17 @@
             <h1 class="titre">Modifier the:</h1>
             <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
             <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementTheModif.php" method="post">  
+                <input type="hidden" name="id" value="<?php echo $theById['id'] ?>">
+                <br>
                 <label for="">Nom:</label>
-                <input type="text" name="nom" value="">
+                <input type="text" name="nom" value="<?php echo $theById['nom'] ?>">
                 <br>
                 <label for="">Occupation en m2:</label>
-                <input type="number" name="occupation" value="">
+                <input type="number" name="occupation" value="<?php echo $theById['occupation'] ?>">
                 <br>
                 <label for="">Rendement en kg:</label>
-                <input type="number" name="Rendement" value="">
+                <input type="number" name="rendement" value="<?php echo $theById['rendement'] ?>">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="valider">
 

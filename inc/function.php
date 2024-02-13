@@ -22,7 +22,7 @@ function insertThe($nom, $rendement, $occupation)
 
 function editThe($id, $nom, $occupation, $rendement)
 {
-    $sql="update table projetthe_the set nom='%s', occupation=%d, rendement=%d where id='%s'";
+    $sql="update  projetthe_the set nom='%s', occupation=%d, rendement=%d where id='%s'";
     $sql=sprintf($sql, $nom, $occupation, $rendement, $id);
     mysqli_query(connect(), $sql);
 }
@@ -206,7 +206,7 @@ function insertSalaire($id_cueilleur, $montant)
 
 function editSalaire($id, $id_cueilleur, $montant)
 {
-    $sql="update table projetthe_salaire set id_cueilleur='%s', montant=%d where id='%s'";
+    $sql="update  projetthe_salaire set id_cueilleur='%s', montant=%d where id='%s'";
     $sql=sprintf($sql, $id_cueilleur, $montant, $id);
     mysqli_query(connect(), $sql);
 }

@@ -1,3 +1,9 @@
+<?php
+    require'../inc/function.php'; 
+    $id = $_GET['id'];
+    $salaireById = getByIdSalaire($id);
+    $cueilleur = getAllCueilleur();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,15 +47,18 @@
             <h1 class="titre">Modifier salaire d'un cueilleur:</h1>
             <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
             <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementSalaireModif.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $salaireById['id']; ?>">
                 <!-- mila fonction getAllCueilleur dia ny id anlay cueilleur no atao value -->
                 <label for="">cueilleur:</label>
                 <select name="id_cueilleur" id="id_cueilleur" value="">
                     <option value="">choisir un cueilleur</option>
-                    <!-- boucler-na eto ny anaralay cueilleur sy ny id any -->
-                    <option value="">Nom cueilleur</option>
+                    <?php
+                        for ($i=0; $i < count($cueilleur); $i++) { ?>
+                            <option value="<?php echo $cueilleur[$i]['id'] ?>"><?php echo $cueilleur[$i]['nom'] ?></option>
+                        <?php }
+                    ?>
                     
-
                 </select>
                 <br>
                 <label for="">Salaire par kg:</label>

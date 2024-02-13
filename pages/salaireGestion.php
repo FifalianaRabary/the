@@ -60,8 +60,8 @@
                     <td><?php echo $salaires[$i]['id']; ?></td>
                     <td><?php echo $salaires[$i]['id_cueilleur']; ?></td>
                     <td><?php echo $salaires[$i]['montant']; ?></td>
-                    <td><a  class ="tdA" href="salaireModif.php">Modifier</a></td>
-                    <td><a class ="tdA" href="salaireSupp.php">Supprimer</a></td>
+                    <td><a  class ="tdA" href="salaireModif.php?id=<?php echo $salaires[$i]['id']; ?>">Modifier</a></td>
+                    <td><a class ="tdA" href="salaireSupp.php?id=<?php echo $salaires[$i]['id']; ?>">Supprimer</a></td>
 
                 </tr>
                <?php } ?>
