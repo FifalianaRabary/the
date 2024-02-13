@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inserer thé</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssInsertDepense.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cssInsertDepense.css" rel="stylesheet">
 </head>
 <body>
 
@@ -42,8 +42,8 @@
             <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
             <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
             <form action="" method="get">
-                <label for="">Type:</label>
-                <input type="text" name="nom" value="">
+                <label for="type">Type:</label>
+                <input type="text" name="nom" id="type" value="">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="valider">
 
@@ -74,8 +74,8 @@
    
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>
