@@ -68,7 +68,7 @@ function insertParcelle($surface, $id_the)
 
 function editParcelle($id, $surface, $id_the)
 {
-    $sql="update table projetthe_parcelle set surface=%d, id_the='%s' where id='%s'";
+    $sql="update projetthe_parcelle set surface=%d, id_the='%s' where id='%s'";
     $sql=sprintf($sql, $surface, $id_the, $id);
     mysqli_query(connect(), $sql);
 }
