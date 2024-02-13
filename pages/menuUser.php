@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>saisie cueillette</title>
+    <title>menu User</title>
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/cssMenuUser.css" rel="stylesheet">

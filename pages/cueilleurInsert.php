@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inserer thé</title>
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/cssInsertCueilleur.css" rel="stylesheet">

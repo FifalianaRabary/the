@@ -22,6 +22,8 @@
 
         <div class="divLogin col-xs-5 col-md-5 col-sm-5 col-lg-5">
 
+        <a href="loginAdmin.php" class="link">Log in as admin</a>
+
             <div class="formulaire col-xs-12 col-md-12 col-sm-12 col-lg-12">
 
             <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
