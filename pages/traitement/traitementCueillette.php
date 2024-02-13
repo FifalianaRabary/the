@@ -12,5 +12,6 @@
     if (!$validation) {
         $response = "failed";
     }
+
     echo $response;
 ?>

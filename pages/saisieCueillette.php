@@ -25,7 +25,8 @@
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <a href="#">Accueil</a>
             <a href="#">Menu</a>
-            <a href="#">Déconnexion</a>
+            <a href="deconnexion.php">Déconnexion</a>
+
         </div>
     </header>
   
@@ -45,7 +46,7 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Faire une cueillette:</h1>
-            <form id="formCueillette">
+            <form id="formCueillette" method="get">
                 <label for="date">Date:</label>
                 <input type="date" name="date" id="date">
                 <br>
@@ -54,7 +55,7 @@
                     <option value="">choisir un cueilleur</option>
                     <!-- boucler-na eto ny anaralay cueilleur sy ny id any -->
                     <?php for ($i=0; $i <count($cueilleur) ; $i++) { ?>
-                    <option value="<?php echo $cueilleur[$i]['id']; ?>"><?php echo $cueilleur[$i]['nom'] ?></option>
+                    <option value="<?php echo $cueilleur[$i]['id']; ?>"><?php echo $cueilleur[$i]['nom']; ?></option>
                     <?php  } ?>
                 </select>
                 <br>
@@ -63,7 +64,7 @@
                     <option value="">choisir une parcelle</option>
                     <!-- boucler-na eto ny id anlay  parcelle sy ny id any -->
                     <?php for ($i=0; $i <count($parcelle) ; $i++) { ?>
-                    <option value="<?php echo $parcelle[$i]['id']; ?>"><?php echo $parcelle[$i]['id'] ?></option>
+                    <option value="<?php echo $parcelle[$i]['id']; ?>"><?php echo $parcelle[$i]['id']; ?></option>
                     <?php  } ?>
                 </select>
                 <br>

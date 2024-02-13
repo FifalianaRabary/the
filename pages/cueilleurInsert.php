@@ -17,7 +17,8 @@
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <a href="#">Accueil</a>
             <a href="#">Menu</a>
-            <a href="#">Déconnexion</a>
+            <a href="deconnexion.php">Déconnexion</a>
+
         </div>
     </header>
   

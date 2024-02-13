@@ -316,7 +316,7 @@ function coutRevient($id_parcelle, $date1, $date2)
 
 function montantVente($id_parcelle, $date1, $date2)
 {
-    $sql="select * from projetthe_vente where id_the=(select id_the from pacerelle where id=%d) and date>='%s' and date<='%s'";
+    $sql="select * from projetthe_vente where id_the=(select id_the from projetthe_parcelle where id=%d) and date>='%s' and date<='%s'";
     $sql=sprintf($sql, $id_parcelle, $date1, $date2);
     $result= mysqli_query(connect(), $sql);
     $depense=array();
@@ -387,6 +387,7 @@ function insertCueillette($id_cueilleur, $id_parcelle, $poids, $date_cueillette)
     $sql="insert into projetthe_cueillette(id_cueilleur, id_parcelle, poids, date_cueillette) values(%d, %d, %d, '%s')";
     $sql=sprintf($sql, $id_cueilleur, $id_parcelle, $poids, $date_cueillette);
     mysqli_query(connect(), $sql);
+    return true;
 }
 
 function editCueillette($id_cueillette, $id_cueilleur, $id_parcelle, $poids, $date_cueillette)
