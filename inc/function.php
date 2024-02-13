@@ -15,28 +15,28 @@ function checkLogin($email, $password, $type)
 // -------------------------- GESTION THE ------------------------------
 function insertThe($nom, $rendement, $occupation)
 {
-    $sql="insert into projetthe_the(nom, rendement, occupation) values('%s', %d, %d)";
+    $sql="insert into projetThe_the(nom, rendement, occupation) values('%s', %d, %d)";
     $sql=sprintf($sql, $nom, $rendement, $occupation);
     mysqli_query(connect(), $sql);
 }
 
 function editThe($id, $nom, $occupation, $rendement)
 {
-    $sql="update  projetthe_the set nom='%s', occupation=%d, rendement=%d where id='%s'";
+    $sql="update  projetThe_the set nom='%s', occupation=%d, rendement=%d where id=%d";
     $sql=sprintf($sql, $nom, $occupation, $rendement, $id);
     mysqli_query(connect(), $sql);
 }
 
 function deleteThe($id)
 {
-    $sql="delete from projetthe_the where id='%s'";
+    $sql="delete from projetThe_the where id=%d";
     $sql=sprintf($sql, $id);
     mysqli_query(connect(), $sql);
 }
 
 function getAllThe()
 {
-    $sql="select* from projetthe_the";
+    $sql="select * from projetThe_the";
     $result=mysqli_query(connect(), $sql);
     $the=array();
     while ($donne=mysqli_fetch_assoc($result)) {
@@ -47,7 +47,7 @@ function getAllThe()
 
 function getByIdThe($id)
 {
-    $sql="select* from projetthe_the where id='%s'";
+    $sql="select* from projetThe_the where id=%d";
     $sql=sprintf($sql, $id);
     $result=mysqli_query(connect(), $sql);
     $the=array();
@@ -61,21 +61,21 @@ function getByIdThe($id)
 
 function insertParcelle($surface, $id_the)
 {
-    $sql="insert into projetthe_parcelle(surface, id_the) values(%d, '%s')";
+    $sql="insert into projetthe_parcelle(surface, id_the) values(%d, %d)";
     $sql=sprintf($sql, $surface, $id_the);
     mysqli_query(connect(), $sql);
 }
 
 function editParcelle($id, $surface, $id_the)
 {
-    $sql="update projetthe_parcelle set surface=%d, id_the='%s' where id='%s'";
+    $sql="update projetthe_parcelle set surface=%d, id_the=%d where id=%d";
     $sql=sprintf($sql, $surface, $id_the, $id);
     mysqli_query(connect(), $sql);
 }
 
 function deleteParcelle($id)
 {
-    $sql="delete from projetthe_parcelle where id='%s'";
+    $sql="delete from projetthe_parcelle where id=%d";
     $sql=sprintf($sql, $id);
     mysqli_query(connect(), $sql);
 }
@@ -93,7 +93,7 @@ function getAllParcelle()
 
 function getByIdParcelle($id)
 {
-    $sql="select* from projetthe_parcelle where id='%s'";
+    $sql="select* from projetthe_parcelle where id=%d";
     $sql=sprintf($sql, $id);
     $result=mysqli_query(connect(), $sql);
     $parcelle=array();
@@ -114,14 +114,14 @@ function insertCueilleur($nom, $genre, $date_naissance)
 
 function editCueilleur($id, $nom, $genre, $date_naissance)
 {
-    $sql="update projetthe_cueilleur set nom='%s', genre='%s', date_naissance='%s' where id='%s'";
+    $sql="update projetthe_cueilleur set nom='%s', genre='%s', date_naissance='%s' where id=%d";
     $sql=sprintf($sql, $nom, $genre, $date_naissance, $id);
     mysqli_query(connect(), $sql);
 }
 
 function deleteCueilleur($id)
 {
-    $sql="delete from projetthe_cueilleur where id='%s'";
+    $sql="delete from projetthe_cueilleur where id=%d";
     $sql=sprintf($sql, $id);
     mysqli_query(connect(), $sql);
 }
@@ -139,7 +139,7 @@ function getAllCueilleur()
 
 function getByIdCueilleur($id)
 {
-    $sql="select* from projetthe_cueilleur where id='%s'";
+    $sql="select* from projetthe_cueilleur where id=%d";
     $sql=sprintf($sql, $id);
     $result=mysqli_query(connect(), $sql);
     $cueilleur=array();
@@ -160,14 +160,14 @@ function insertTypeDepense($type)
 
 function editTypeDepense($id, $type)
 {
-    $sql="update projetthe_type_depense set type='%s' where id='%s'";
+    $sql="update projetthe_type_depense set type='%s' where id=%d";
     $sql=sprintf($sql, $type, $id);
     mysqli_query(connect(), $sql);
 }
 
 function deleteTypeDepense($id)
 {
-    $sql="delete from projetthe_type_depense where id='%s'";
+    $sql="delete from projetthe_type_depense where id=%d";
     $sql=sprintf($sql, $id);
     mysqli_query(connect(), $sql);
 }
@@ -185,7 +185,7 @@ function getAllTypeDepense()
 
 function getByIdTypeDepense($id)
 {
-    $sql="select* from projetthe_type_depense where id='%s'";
+    $sql="select* from projetthe_type_depense where id=%d";
     $sql=sprintf($sql, $id);
     $result=mysqli_query(connect(), $sql);
     $type_depense=array();
@@ -199,21 +199,21 @@ function getByIdTypeDepense($id)
 
 function insertSalaire($id_cueilleur, $montant)
 {
-    $sql="insert into projetthe_salaire(id_cueilleur, montant) values('%s', '%s')";
+    $sql="insert into projetthe_salaire(id_cueilleur, montant) values(%d, '%s')";
     $sql=sprintf($sql, $id_cueilleur, $montant);
     mysqli_query(connect(), $sql);
 }
 
 function editSalaire($id, $id_cueilleur, $montant)
 {
-    $sql="update  projetthe_salaire set id_cueilleur='%s', montant=%d where id='%s'";
+    $sql="update  projetthe_salaire set id_cueilleur=%d, montant=%d where id=%d";
     $sql=sprintf($sql, $id_cueilleur, $montant, $id);
     mysqli_query(connect(), $sql);
 }
 
 function deleteSalaire($id)
 {
-    $sql="delete from projetthe_salaire where id='%s'";
+    $sql="delete from projetthe_salaire where id=%d";
     $sql=sprintf($sql, $id);
     mysqli_query(connect(), $sql);
 }
@@ -231,7 +231,7 @@ function getAllSalaire()
 
 function getByIdSalaire($id)
 {
-    $sql="select* from projetthe_salaire where id='%s'";
+    $sql="select* from projetthe_salaire where id=%d";
     $sql=sprintf($sql, $id);
     $result=mysqli_query(connect(), $sql);
     $salaire=array();
@@ -245,7 +245,7 @@ function getByIdSalaire($id)
 
 function insertDepense($id_type, $date, $montant, $id_parcelle)
 {
-    $sql="insert into projetthe_depense(id_type, date, montant, id_parcelle) values('%s', '%s', %d, '%s')";
+    $sql="insert into projetthe_depense(id_type, date, montant, id_parcelle) values(%d, '%s', %d, %d)";
     $sql=sprintf($sql, $id_type, $date, $montant, $id_parcelle);
     mysqli_query(connect(), $sql);
 }
@@ -254,7 +254,7 @@ function insertDepense($id_type, $date, $montant, $id_parcelle)
 
 function poidsTotalCueillette($id_parcelle, $date1, $date2)
 {
-    $sql="select * from projetthe_cueillette where id_parcelle='%s' and date>='%s' and date<='%s'";
+    $sql="select * from projetthe_cueillette where id_parcelle=%d and date>='%s' and date<='%s'";
     $sql=sprintf($sql, $id_parcelle, $date1, $date2);
     $result= mysqli_query(connect(), $sql);
     $cueillette=array();
@@ -293,7 +293,7 @@ function poidsRestantParcelle($id_parcelle, $date1, $date2)
 
 function depenseTotalParcelle($id_parcelle, $date1, $date2)
 {
-    $sql="select * from projetthe_depense where id_parcelle='%s' and date>='%s' and date<='%s'";
+    $sql="select * from projetthe_depense where id_parcelle=%d and date>='%s' and date<='%s'";
     $sql=sprintf($sql, $id_parcelle, $date1, $date2);
     $result= mysqli_query(connect(), $sql);
     $depense=array();

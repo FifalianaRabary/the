@@ -29,7 +29,7 @@
                 
                 <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
 
-                <form action="../pages/traitement/traitementLogin.php" method="post">
+                <form action="../pages/traitement/traitementLogUser.php" method="post">
                     <label for="mail">Email:</label>
                     <input type="email" name="mail" id="mail" value="user1@gmail.com">
                     <br>
