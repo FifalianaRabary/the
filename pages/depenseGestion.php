@@ -58,7 +58,7 @@
                     <td><?php echo $depense[$i]['id']; ?></td>
                     <td><?php echo $depense[$i]['type']; ?></td>
                     <td><a  class ="tdA" href="depenseModif.php?id=<?php echo $depense[$i]['id']; ?>">Modifier</a></td>
-                    <td><a class ="tdA" href="depenseSupp.php">Supprimer</a></td>
+                    <td><a class ="tdA" href="depenseSupp.php?id=<?php echo $depense[$i]['id']; ?>">Supprimer</a></td>
                 </tr>
               <?php  } ?>
                
