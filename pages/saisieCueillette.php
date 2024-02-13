@@ -1,3 +1,9 @@
+<?php
+    require'../inc/function.php'; 
+    $cueilleur = getAllCueilleur();
+    $parcelle = getAllParcelle();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,14 +51,18 @@
                 <select name="id_cueilleur" id="id_cueilleur">
                     <option value="">choisir un cueilleur</option>
                     <!-- boucler-na eto ny anaralay cueilleur sy ny id any -->
-                    <option value="">Nom cueilleur</option>
+                    <?php for ($i=0; $i <count($cueilleur) ; $i++) { ?>
+                    <option value="<?php echo $cueilleur[$i]['id'] ?>"><?php echo $cueilleur[$i]['nom'] ?></option>
+                    <?php  } ?>
                 </select>
                 <br>
                 <label for="id_parcelle">Parcelle:</label>
                 <select name="id_parcelle" id="id_parcelle">
                     <option value="">choisir une parcelle</option>
                     <!-- boucler-na eto ny id anlay  parcelle sy ny id any -->
-                    <option value="">id parcelle</option>
+                    <?php for ($i=0; $i <count($parcelle) ; $i++) { ?>
+                    <option value="<?php echo $parcelle[$i]['id'] ?>"><?php echo $parcelle[$i]['surface'] ?></option>
+                    <?php  } ?>
                 </select>
                 <br>
                 <label for="poids">Poids cueilli:</label>
