@@ -24,7 +24,7 @@
 
             <div class="formulaire col-xs-12 col-md-12 col-sm-12 col-lg-12">
 
-            <img class="logo-img" src="../image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
 
                 <form action="../pages/traitement/traitementLogin.php" method="post">
                     <label for="">Email:</label>
