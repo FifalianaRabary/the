@@ -54,7 +54,7 @@
                     <option value="">choisir un cueilleur</option>
                     <!-- boucler-na eto ny anaralay cueilleur sy ny id any -->
                     <?php for ($i=0; $i <count($cueilleur) ; $i++) { ?>
-                    <option value="<?php echo $cueilleur[$i]['id'] ?>"><?php echo $cueilleur[$i]['nom'] ?></option>
+                    <option value="<?php echo $cueilleur[$i]['id']; ?>"><?php echo $cueilleur[$i]['nom'] ?></option>
                     <?php  } ?>
                 </select>
                 <br>
@@ -63,7 +63,7 @@
                     <option value="">choisir une parcelle</option>
                     <!-- boucler-na eto ny id anlay  parcelle sy ny id any -->
                     <?php for ($i=0; $i <count($parcelle) ; $i++) { ?>
-                    <option value="<?php echo $parcelle[$i]['id'] ?>"><?php echo $parcelle[$i]['id'] ?></option>
+                    <option value="<?php echo $parcelle[$i]['id']; ?>"><?php echo $parcelle[$i]['id'] ?></option>
                     <?php  } ?>
                 </select>
                 <br>
