@@ -314,5 +314,135 @@ function coutRevient($id_parcelle, $date1, $date2)
     return $cout_revient;
 }
 
+function montantVente($id_parcelle, $date1, $date2)
+{
+    $sql="select * from projetthe_vente where id_the=(select id_the from pacerelle where id=%d) and date>='%s' and date<='%s'";
+    $sql=sprintf($sql, $id_parcelle, $date1, $date2);
+    $result= mysqli_query(connect(), $sql);
+    $depense=array();
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $depense[]=$donne;
+    }
+    $total=$depense[0]['montant'];
+    $poids=poidsTotalCueillette($id_parcelle, $date1, $date2);
+    $montant=$total*$poids;
+    return $montant;
+}
 
+function benefice($id_parcelle, $date1, $date2)
+{
+    $vente=montantVente($id_parcelle, $date1, $date2);
+    $depense= depenseTotalParcelle($id_parcelle, $date1, $date2);
+    $benefice=$vente-$depense;
+    return $benefice;
+}
+
+function poidsRecolteParCueilleur($date1, $date2)
+{
+    $sql="select DISTINCT id_cueilleur from projetthe_cueillette where date>='%s' and date<='%s' order by id";
+    $sql=sprintf($sql, $date1, $date2);
+    $result= mysqli_query(connect(), $sql);
+    $cueilleur=array();
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $cueilleur[]=$donne;
+    }
+
+    $poids=array();
+
+    for ($i=0; $i < count($cueilleur) ; $i++) { 
+        $sql2="select * from projetthe_cueillette where id_cueilleur=%d ";
+        $sql2=sprintf($sql2, $cueilleur[$i]['id_cueilleur']);
+        while ($donne=mysqli_fetch_assoc($result)) {
+            $cueillette[]=$donne;
+        }
+        $total=0;
+        for ($i = 0; $i < count($cueillette); $i++) {
+            $total+=$cueillette[$i]['poids'];
+        }
+        $poids[$i]=$total;
+    }
+    return $poids;
+}
+
+function salaire($date1, $date2)
+{
+    $poids=poidsRecolteParCueilleur($date1, $date2);
+    $salaire=getAllSalaire();
+    $salaires=array();
+    $config=getLastConfiguration();
+    for ($i=0; $i < count($salaire) ; $i++) { 
+        if ($poids[$i]<$config['min_journalier']) {
+            $salaires[$i]=$salaire[$i]['montant']*$poids[$i]*(1-($config['mallus']/100));
+        } else {
+            $salaires[$i]=$salaire[$i]['montant']*$poids[$i]*(1+($config['bonus']/100));
+        }
+    }
+    return $salaires;
+}
+
+// ---------------------- CUEILLETTE -----------------------------------
+
+function insertCueillette($id_cueilleur, $id_parcelle, $poids, $date_cueillette)
+{
+    $sql="insert into projetthe_cueillette(id_cueilleur, id_parcelle, poids, date_cueillette) values('%s', '%s', %d, '%s')";
+    $sql=sprintf($sql, $id_type, $date, $montant, $id_parcelle);
+    mysqli_query(connect(), $sql);
+}
+
+function editCueillette($id_cueillette, $id_cueilleur, $id_parcelle, $poids, $date_cueillette)
+{
+    $sql="update projetthe_cueillette set id_cueilleur=%d, id_parcelle=%d, poids=%s, date_cueillette='%s' where id=%d";
+    $sql=sprintf($sql, $id_cueilleur, $id_parcelle, $poids, $date_cueillette, $id_cueillette);
+    mysqli_query(connect(), $sql);
+}
+
+function deleteCueillette($id)
+{
+    $sql="delete from projetthe_cueillette where id=%d";
+    $sql=sprintf($sql, $id);
+    mysqli_query(connect(), $sql);
+}
+
+function getAllCueillette()
+{
+    $sql="select* from projetthe_cueillette";
+    $result=mysqli_query(connect(), $sql);
+    $cueillette=array();
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $cueillette[]=$donne;
+    }
+    return $cueillette;
+}
+
+function getByIdCueilleur($id)
+{
+    $sql="select* from projetthe_cueilleur where id=%d";
+    $sql=sprintf($sql, $id);
+    $result=mysqli_query(connect(), $sql);
+    $cueillette=array();
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $cueillette[]=$donne;
+    }
+    return $cueillette[0];
+}
+
+// ---------------------- CONFIGURATION --------------------------------
+
+function insertConfiguration($min_journalier, $bonus, $mallus, $poids_bonus, $poids_mallus)
+{
+    $sql="insert into projetthe_configuration(min_journalier, bonus, mallus, poids_bonus, poids_mallus) values(%d, %d, %d, %d, %d)";
+    $sql=sprintf($sql, $min_journalier, $bonus, $mallus, $poids_bonus, $poids_mallus);
+    mysqli_query(connect(), $sql);
+}
+
+function getLastConfiguration()
+{
+    $sql="select* from projetthe_configuration order by id DESC LIMIT 1";
+    $result=mysqli_query(connect(), $sql);
+    $cueillette=array();
+    while ($donne=mysqli_fetch_assoc($result)) {
+        $cueillette[]=$donne;
+    }
+    return $cueillette[0];
+}
 ?>
