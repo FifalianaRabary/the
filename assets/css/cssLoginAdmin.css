@@ -1,15 +1,15 @@
 .container{
 /* border:solid; */
 width: 100%;
-background: url(../image/champ.jpg);
+background: url(../image/field.jpg);
 position: relative;
 	height: 1024px;
 }
 
 .text{
-/* border:solid; */
-margin-top: 15%;
-padding-left:8%;
+    margin-top: 17%;
+padding-left: 8%;
+font-size: large;
 
 }
 
@@ -26,46 +26,48 @@ margin-top: 17%;
     border-radius: 16px;
     margin-left: 23%;
 
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(0 0 0 / 50%);
 
     box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
-/* header, footer {
-    background-color: #94b5fb;
-    color: white;
-    text-align: center;
-    padding: 10px;
-} */
 
 footer {
-    /* margin-top: 83%; */
     color: white;
     margin-left: 0%;
-    background-color: rgb(1 166 236);
+    background-color: rgb(80 51 51);
     box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.3);
     padding-left: 41%;
     text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
-
+    font-family: system-ui;
 
 }
 
 .bienvenu{
-    color: white;
-    font-size: 850%;
-    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);
+    color: #ffc600;
+font-size: 850%;
+text-shadow: 5px 11px 0px rgba(0, 0, 0, 0.5);
+font-family: system-ui;
 }
 
-.tea-ko{
-    color:white;
-    font-size: 995%;
-    text-shadow: 9px 4px 9px rgba(0, 0, 0, 0.5);}
+
 
 .login{
-    background-color: #01a6ec;
+    background-color: #facf3c;
     margin-top: 11%;
     margin-left: 40%;
     border: none;
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.3);
 
+}
+
+.login:hover{
+    background-color: #ffc400;
+
+}
+.logo-img{
+    width: 64%;
+margin-top: -27%;
+margin-left: 15%;
 }

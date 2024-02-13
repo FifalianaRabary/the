@@ -18,12 +18,13 @@
         
         <div class="text col-xs-7 col-md-7 col-sm-7 col-lg-7">
             <h1 class="bienvenu">Welcome to</h1>
-            <h1 class="tea-ko">Tea-ko</h1>
         </div>
 
         <div class="divLogin col-xs-5 col-md-5 col-sm-5 col-lg-5">
 
             <div class="formulaire col-xs-12 col-md-12 col-sm-12 col-lg-12">
+
+            <img class="logo-img" src="../image/lg.png" alt="Your Logo">
 
                 <form action="../pages/traitement/traitementLogin.php" method="post">
                     <label for="">Email:</label>
