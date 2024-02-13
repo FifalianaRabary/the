@@ -243,10 +243,10 @@ function getByIdSalaire($id)
 
 // -------------------------- SAISIE DEPENSE ------------------------------
 
-function insertDepense($id_type, $date, $montant)
+function insertDepense($id_type, $date, $montant, $id_parcelle)
 {
-    $sql="insert into projetthe_depense(id_type, date, montant) values('%s', '%s', %d)";
-    $sql=sprintf($sql, $id_type, $date, $montant);
+    $sql="insert into projetthe_depense(id_type, date, montant, id_parcelle) values('%s', '%s', %d, '%s')";
+    $sql=sprintf($sql, $id_type, $date, $montant, $id_parcelle);
     mysqli_query(connect(), $sql);
 }
 

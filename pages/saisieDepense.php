@@ -1,3 +1,8 @@
+<?php
+    require'../inc/function.php'; 
+    $type_depense  = getAllTypeDepense();
+    $parcelle = getAllParcelle();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +42,7 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Faire une depense:</h1>
-            <form action="" method="get">
+            <form action="" method="post">
                 <label for="date">Date:</label>
                 <input type="date" name="date" id="date">
                 <br>
@@ -45,13 +50,21 @@
                 <select name="id_type_depense" id="id_type_depense">
                     <option value="">choisir une categorie</option>
                     <!-- boucler-na eto lay type depense sy ny id any -->
-                    <option value="">nom type depense</option>
+                    <?php for ($i=0; $i < count($type_depense); $i++) { ?>
+                        <option value="<?php echo $type_depense[$i]['id'] ?>"><?php echo $type_depense[$i]['nom'] ?></option>
+                    <? } ?>
                 </select>
                 <br>
                 <label for="poids">Montant:</label>
-
                 <input type="number" name="poids" id="poids">
                 <br>
+                <select name="id_parcelle" id="id_parcelle">
+                    <option value="">choisir une parcelle</option>
+                    <!-- boucler-na eto lay type depense sy ny id any -->
+                    <?php for ($i=0; $i < count($parcelle); $i++) { ?>
+                        <option value="<?php echo $parcelle[$i]['id'] ?>"><?php echo $parcelle[$i]['nom'] ?></option>
+                    <? } ?>
+                </select>
                 <input type="submit" class="insert btn btn-primary" value="valider">
 
 
