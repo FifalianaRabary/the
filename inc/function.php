@@ -160,7 +160,7 @@ function insertTypeDepense($type)
 
 function editTypeDepense($id, $type)
 {
-    $sql="update table projetthe_type_depense set type='%s' where id='%s'";
+    $sql="update projetthe_type_depense set type='%s' where id='%s'";
     $sql=sprintf($sql, $type, $id);
     mysqli_query(connect(), $sql);
 }

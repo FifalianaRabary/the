@@ -6,7 +6,7 @@
     $dtn = $_POST['dtn'];
 
     if(empty($nom) || empty($dtn)){
-        header('Location:../cueilleurInsert.php?message=Tous les champs doivent etre remplie');
+        header('Location:../cueilleurModif.php?message=Tous les champs doivent etre remplie');
     } else{
         editCueilleur($id,$nom,$genre,$dtn);
         header('Location:../cueilleurGestion.php?message=Information modifier');

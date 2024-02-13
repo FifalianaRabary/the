@@ -1,3 +1,8 @@
+<?php
+    require'../inc/function.php'; 
+    $id = $_GET['id'];
+    $depenseById = getByIdTypeDepense($id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,11 +31,11 @@
         
         <div class="divGestion col-xs-2 col-md-2 col-sm-2 col-lg-2">
            
-            <button class="bouton btt " onclick="window.location.href='theGestion.html'">Gestion thé</button>
-            <button class="bouton btt " onclick="window.location.href='parcelleGestion.html'">Gestion parcelle</button>
-            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.html'">Gestion cueilleur</button>
-            <button class="bouton btt " onclick="window.location.href='depenseGestion.html'">Gestion depense</button>
-            <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
+            <button class="bouton btt " onclick="window.location.href='theGestion.php'">Gestion thé</button>
+            <button class="bouton btt " onclick="window.location.href='parcelleGestion.php'">Gestion parcelle</button>
+            <button class="bouton btt " onclick="window.location.href='cueilleurGestion.php'">Gestion cueilleur</button>
+            <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
+            <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Configuration salaire</button>
 
             
         </div>
@@ -41,9 +46,12 @@
             <h1 class="titre">Modifier  categorie de depense:</h1>
             <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
             <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
-            <form action="" method="get">
+            <form action="../pages/traitement/traitementDepenseModif.php" method="post">
+                <label for="id">id:</label>
+                <input type="text" name="id" id="id" value="<?php echo $depenseById['id']; ?>">
+                <br>
                 <label for="type">Type:</label>
-                <input type="text" name="nom" id="type" value="">
+                <input type="text" name="type" id="type" value="<?php echo $depenseById['type']; ?>">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="valider">
 
