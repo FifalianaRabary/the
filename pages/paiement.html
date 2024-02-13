@@ -1,9 +1,3 @@
-<?php
-    require'../inc/function.php'; 
-    $id = $_GET['id'];
-    $salaireById = getByIdSalaire($id);
-    $cueilleur = getAllCueilleur();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cssInsertSalaire.css" rel="stylesheet">
+    <link href="cssPaiement.css" rel="stylesheet">
 </head>
 <body>
 
@@ -38,36 +32,69 @@
             <button class="bouton btt " onclick="window.location.href='salaireGestion.html'">Configuration salaire</button>
             <button class="bouton btt " onclick="window.location.href='paiement.html'">paiement</button>
             <button class="bouton btt " onclick="window.location.href='configurationJournaliere.html'">Configuration journaliere</button>
+
+
+
             
         </div>
 
         <div class="filler col-xs-2 col-md-2 col-sm-2 col-lg-2"></div>
 
-        <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <h1 class="titre">Modifier salaire d'un cueilleur:</h1>
-            <!-- ny action mankany am traitement dia ny traitement tokony miverina amlay page gestion -->
-            <!-- alaina ny id anlay ligne modifier-na dia asiana valeur par défaut daholo lay champ -->
-            <form action="../pages/traitement/traitementSalaireModif.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $salaireById['id']; ?>">
-                <!-- mila fonction getAllCueilleur dia ny id anlay cueilleur no atao value -->
-                <label for="">cueilleur:</label>
-                <select name="id_cueilleur" id="id_cueilleur" value="">
-                    <option value="">choisir un cueilleur</option>
-                    <?php
-                        for ($i=0; $i < count($cueilleur); $i++) { ?>
-                            <option value="<?php echo $cueilleur[$i]['id'] ?>"><?php echo $cueilleur[$i]['nom'] ?></option>
-                        <?php }
-                    ?>
-                    
-                </select>
-                <br>
-                <label for="">Salaire par kg:</label>
-                <input type="number" name="montant" value="">
-                <br>
-                <input type="submit" class="insert btn btn-primary" value="valider">
+        <div class=" col-xs-6 col-md-6 col-sm-6 col-lg-6">
+
+            <div class="row">
+                <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
+                    <form action="" method="get">
+                        <label for="">Date debut:</label>
+                        <input type="date" name="debut" value="">
+                        <label for="">Date fin:</label>
+                        <input type="date" name="fin" value="">
+        
+                        <input type="submit" class="insert btn btn-primary" value="ok">
+        
+        
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class=" liste col-xs-6 col-md-6 col-sm-6 col-lg-6">
+
+                    <h1 class="titre">Liste paiment</h1>
+
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">nom cueilleur</th>
+                            <th scope="col">poids</th>
+                            <th scope="col">bonus</th>
+                            <th scope="col">mallus</th>
+                            <th scope="col">montant paiment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>12-11-1999</td>
+                                <td>Rakoto</td>
+                                <td>52 kg</td>
+                                <td>2%</td>
+                                <td>1%</td>
+                                <td>2000000 ar</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                 </div>
+            </div>
+
+           
+            
 
 
-            </form>
+
         </div>
 
 
