@@ -35,6 +35,8 @@
             <button class="bouton btt " onclick="window.location.href='depenseGestion.php'">Gestion depense</button>
             <button class="bouton btt " onclick="window.location.href='salaireGestion.php'">Configuration salaire</button>
             <button class="bouton btt " onclick="window.location.href='configurationJournaliere.php'">Configuration journaliere</button>
+            <button class="bouton btt " onclick="window.location.href='prixVenteInsert.php'">Configuration prix vente</button>
+
             
         </div>
 

@@ -1,21 +1,17 @@
-<?php
-    require'../inc/function.php'; 
-    $cueilleurs  = getAllCueilleur();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/cssInsertParcelle.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="cssPrixVenteInsert.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <img class="logo-img" src="../assets/image/lg.png" alt="Your Logo">
+            <img class="logo-img" src="image/lg.png" alt="Your Logo">
         </div>
 
         <div class="nav col-xs-6 col-md-6 col-sm-6 col-lg-6">
@@ -37,43 +33,36 @@
             <button class="bouton btt " onclick="window.location.href='configurationJournaliere.php'">Configuration journaliere</button>
             <button class="bouton btt " onclick="window.location.href='prixVenteInsert.php'">Configuration prix vente</button>
 
+
             
         </div>
 
         <div class="filler col-xs-2 col-md-2 col-sm-2 col-lg-2"></div>
 
-        <div class="liste col-xs-6 col-md-6 col-sm-6 col-lg-6">
-            <h1 class="titre">Liste des cueilleurs</h1>
+        <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
+            <h1 class="titre">Configurer:</h1>
+            <form action="" method="get">
+                
 
-            <!-- boucler-na lay cueilleur, mila jerena hoe rehefa 0ny genre dia inona no mipoitra eo etc  -->
-            <table class="table">
-            <thead class="table-dark">
-                <tr>
-                <th scope="col">id</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Date de naissance</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php for ($i=0; $i <count($cueilleurs) ; $i++) { ?>
-                    <tr>
-                    <td><?php echo $cueilleurs[$i]['id']; ?></td>
-                    <td><?php echo $cueilleurs[$i]['nom']; ?></td>
-                    <td><?php if($cueilleurs[$i]['genre'] == 0){echo "Homme";} else {echo "Femme";}; ?></td>
-                    <td><?php echo $cueilleurs[$i]['date_naissance']; ?></td>
-                    <td><a  class ="tdA" href="cueilleurModif.php?id=<?php echo $cueilleurs[$i]['id']; ?>">Modifier</a></td>
-                    <td><a class ="tdA" href="cueilleurSupp.php?id=<?php echo $cueilleurs[$i]['id']; ?>">Supprimer</a></td>
+                <!-- mila fonction getAllThe dia ny id anlay the no atao value -->
+                <label for="">Variete de the :</label>
+                <select name="id_the" id="id_the">
+                    <option value="">choisir une variete</option>
+                    <!-- boucler-na eto ny anaralay the sy ny id any -->
+                    <option value="">Nom the</option>
+                    
 
-                </tr>
-               <?php } ?>
-              
-            </tbody>
-            </table>
-
-            <button class="add btt " onclick="window.location.href='cueilleurInsert.php'">Ajouter</button>
+                </select>
+                <br>
+                <label for="">Prix de vente:</label>
+                <input type="number" name="prix_vente">
+                <br>
 
 
+                <input type="submit" class="insert btn btn-primary" value="valider">
+
+
+            </form>
         </div>
 
 
@@ -99,8 +88,8 @@
    
 
 
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     
 </body>
 </html>
