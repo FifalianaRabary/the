@@ -254,7 +254,7 @@ function insertDepense($id_type, $date, $montant, $id_parcelle)
 
 function poidsTotalCueillette($id_parcelle, $date1, $date2)
 {
-    $sql="select * from projetthe_cueillette where id_parcelle=%d and date>='%s' and date<='%s'";
+    $sql="select * from projetthe_cueillette where id_parcelle=%d and date_cueillette>='%s' and date_cueillette<='%s'";
     $sql=sprintf($sql, $id_parcelle, $date1, $date2);
     $result= mysqli_query(connect(), $sql);
     $cueillette=array();
@@ -384,7 +384,7 @@ function salaire($date1, $date2)
 
 function insertCueillette($id_cueilleur, $id_parcelle, $poids, $date_cueillette)
 {
-    $sql="insert into projetthe_cueillette(id_cueilleur, id_parcelle, poids, date_cueillette) values('%s', '%s', %d, '%s')";
+    $sql="insert into projetthe_cueillette(id_cueilleur, id_parcelle, poids, date_cueillette) values(%d, %d, %d, '%s')";
     $sql=sprintf($sql, $id_cueilleur, $id_parcelle, $poids, $date_cueillette);
     mysqli_query(connect(), $sql);
 }
@@ -445,4 +445,12 @@ function getLastConfiguration()
     }
     return $cueillette[0];
 }
+
+function insertVente($montant)
+{
+    $sql="insert into projetthe_vente(prix) values(%d)";
+    $sql=sprintf($sql, $montant);
+    mysqli_query(connect(), $sql);
+}
 ?>
+

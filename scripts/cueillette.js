@@ -22,7 +22,15 @@ window.addEventListener("DOMContentLoaded", function(){
             }
         });
 
-        xhr.open("GET", "../pages/traitements/traitementCueillette.php?date=" + document.getElementById("dateform").value + "&&cueilleur=" + document.getElementById("cueilleur").value + "&&parcelle=" + document.getElementById("parcelle").value + "&&poids=" + document.getElementById("poids").value);
+        xhr.open("GET", "../pages/traitement/traitementCueillette?date=" + document.getElementById("date").value + "&&cueilleur=" + document.getElementById("id_cueilleur").value + "&&parcelle=" + document.getElementById("id_parcelle").value + "&&poids=" + document.getElementById("poids").value);
         xhr.send();
+    }
+
+    var submitButtonCueillette = document.querySelector("#formCueillette input[type='submit']");
+    if (submitButtonCueillette) {
+        submitButtonCueillette.addEventListener("click", function (event) {
+            event.preventDefault();
+            sendDataCueillette();
+        });
     }
 });

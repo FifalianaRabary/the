@@ -13,6 +13,7 @@
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/cssSaisieCueillette.css" rel="stylesheet">
+    <script src="../scripts/cueillette.js"></script>
 </head>
 <body>
 
@@ -44,7 +45,7 @@
 
         <div class="formulaire col-xs-6 col-md-6 col-sm-6 col-lg-6">
             <h1 class="titre">Faire une cueillette:</h1>
-            <form action="" method="get">
+            <form id="formCueillette">
                 <label for="date">Date:</label>
                 <input type="date" name="date" id="date">
                 <br>
@@ -62,7 +63,7 @@
                     <option value="">choisir une parcelle</option>
                     <!-- boucler-na eto ny id anlay  parcelle sy ny id any -->
                     <?php for ($i=0; $i <count($parcelle) ; $i++) { ?>
-                    <option value="<?php echo $parcelle[$i]['id'] ?>"><?php echo $parcelle[$i]['surface'] ?></option>
+                    <option value="<?php echo $parcelle[$i]['id'] ?>"><?php echo $parcelle[$i]['id'] ?></option>
                     <?php  } ?>
                 </select>
                 <br>
@@ -71,8 +72,6 @@
                 <input type="number" name="poids" id="poids">
                 <br>
                 <input type="submit" class="insert btn btn-primary" value="valider">
-
-
             </form>
         </div>
 

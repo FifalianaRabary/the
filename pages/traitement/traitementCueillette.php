@@ -2,10 +2,10 @@
     require '../../inc/function.php';
     $response = "failure";
     $date = $_GET['date'];
-    $cueilleur = $_GET['cueilleur'];
-    $parcelle = $_GET['parcelle'];
+    $cueilleur = $_GET['id_cueilleur'];
+    $parcelle = $_GET['id_parcelle'];
     $poids = $_GET['poids'];
-    $validation =insertCueillette($cueilleur, $parcelle, $poids, $validation);
+    $validation =insertCueillette($cueilleur, $parcelle, $poids, $date);
     if ($validation) {
         $response = "success";
     }
